@@ -40,21 +40,21 @@ const ContactArea = () => {
                   <AddressBlock
                     icon={icon_1}
                     title="Our Address"
-                    subtitle="1012 Pebda Parkway, Mirpur 2 <br/>Dhaka, Bangladesh"
+                    subtitle="3 Hassan Close, Benson, Ikorodu, Lagos State"
                   />
                 </div>
                 <div className="col-md-4">
                   <AddressBlock
                     icon={icon_2}
                     title="Contact Info"
-                    subtitle='Open a chat or give us call at <br/><a href="tel:310.841.5500" className="call text-lg fw-500">310.841.5500</a>'
+                    subtitle='Open a chat or give us call at <br/><a href="tel:09096361527" className="call text-lg fw-500">09096361527</a>'
                   />
                 </div>
                 <div className="col-md-4">
                   <AddressBlock
                     icon={icon_3}
                     title="24/7 Support"
-                    subtitle='Send us a message <br/><a href="mailto:contact@xaviro.com" className="webaddress">contact@xaviro.com</a>'
+                    subtitle='Send us a message <br/><a href="mailto:accounts@xavirotech.com" className="webaddress">accounts@xavirotech.com</a>'
                   />
                 </div>
               </div>
