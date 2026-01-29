@@ -76,7 +76,7 @@ const AboutUsPage = () => {
           {/* fancy banner three end */}
 
           {/* news letter start */}
-          <NewsletterBanner />
+          {/* <NewsletterBanner /> */}
           {/* news letter end */}
         </main>
 

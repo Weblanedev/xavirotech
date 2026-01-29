@@ -9,8 +9,8 @@ import shape from "@/assets/images/shape/shape_14.svg";
 
 // image style
 const imgStyle = {
-  height:'auto'
-}
+  height: "auto",
+};
 
 const HeroBannerFour = () => {
   return (
@@ -28,7 +28,7 @@ const HeroBannerFour = () => {
                   data-wow-delay="0.1s"
                 >
                   Digital agency with top rated talented people provide quality
-                  services with babun.
+                  services with xaviro.
                 </p>
               </div>
             </div>
@@ -36,8 +36,8 @@ const HeroBannerFour = () => {
               className="d-lg-inline-flex align-items-center wow fadeInUp"
               data-wow-delay="0.2s"
             >
-              <Link href="/contact" className="btn-twelve tran3s me-3 me-xl-5">
-                Get your card
+              <Link href="/shop" className="btn-twelve tran3s me-3 me-xl-5">
+                Shop Now
               </Link>
               <div className="d-flex align-items-center md-mt-20">
                 <Image
@@ -58,9 +58,19 @@ const HeroBannerFour = () => {
         </div>
       </div>
       <div className="media-wrapper wow fadeInUp">
-        <Image src={screen_2} alt="screen" className="lazy-img w-100" style={imgStyle} />
+        <Image
+          src={screen_2}
+          alt="screen"
+          className="lazy-img w-100"
+          style={imgStyle}
+        />
       </div>
-      <Image src={shape} alt="shape" className="lazy-img shapes shape_01" style={imgStyle} />
+      <Image
+        src={shape}
+        alt="shape"
+        className="lazy-img shapes shape_01"
+        style={imgStyle}
+      />
       <Image
         src={screen_3}
         alt="screen"

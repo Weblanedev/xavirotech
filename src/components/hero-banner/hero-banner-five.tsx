@@ -23,12 +23,12 @@ const HeroBannerFive = () => {
               </h1>
               <p className="text-lg text-dark pt-60 lg-pt-40 pb-30 lg-pb-10 sm-pb-30">
                 Digital agency with top rated talented people provide quality
-                services with babun.
+                services with xaviro.
               </p>
               <div className="d-md-inline-flex flex-wrap align-items-center">
                 <div className="me-5 mt-15">
-                  <Link href="/contact" className="btn-sixteen tran3s">
-                    Get Started
+                  <Link href="/shop" className="btn-sixteen tran3s">
+                    Shop Now
                   </Link>
                 </div>
                 <div className="rating sm-mt-20">

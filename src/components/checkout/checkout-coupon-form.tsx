@@ -28,7 +28,7 @@ const CheckoutCouponForm = () => {
         <input type="text" id="coupon" {...register("coupon")} placeholder="Coupon code" />
         <ErrorMsg msg={errors.coupon?.message!} />
       </div>
-      <button type="submit" className="btn-ten tran3s">Apply coupon</button>
+      {/* <button type="submit" className="btn-ten tran3s">Apply coupon</button> */}
     </form>
   );
 };

@@ -60,7 +60,7 @@ const TextFeatureFour = () => {
               />
               <div className="ps-3">
                 <div className="name fw-500 text-dark">Musa Jamy.</div>
-                <p className="m0">CEO & Head of babun.</p>
+                <p className="m0">CEO & Head of xaviro.</p>
               </div>
             </div>
           </div>

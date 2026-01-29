@@ -82,11 +82,21 @@ const menu_data: IMenu[] = [
   // },
   {
     id: 5,
-    link: '/#products',
-    title: 'Products',
+    link: '/shop',
+    title: 'Shop',
   },
   {
     id: 6,
+    link: '/categories',
+    title: 'Categories',
+  },
+  {
+    id: 7,
+    link: '/cart',
+    title: 'Cart',
+  },
+  {
+    id: 8,
     link: '/contact',
     title: 'Contact',
   },

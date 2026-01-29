@@ -3,7 +3,9 @@ import Link from "next/link";
 import blog_data from "@/data/blog-data";
 
 const BlogSidebar = () => {
-  const recent_blogs = blog_data.filter((b) => b.page === "blog-list").slice(-2);
+  const recent_blogs = blog_data
+    .filter((b) => b.page === "blog-list")
+    .slice(-2);
   return (
     <div className="blog-sidebar md-mt-60 ps-xxl-4">
       <form action="#" className="sidebar-search">
@@ -44,21 +46,21 @@ const BlogSidebar = () => {
       </div>
       <div className="blog-recent-news mt-60 lg-mt-40">
         <h3 className="sidebar-title">Recent News</h3>
-        {recent_blogs.map((b,i) => (
-        <article key={i} className="recent-news">
-          <figure
-            className="post-img"
-            style={{
-              backgroundImage: `url(${b.img.src})`,
-            }}
-          ></figure>
-          <div className="post-data">
-            <div className="date">{b.date}</div>
-            <Link href={`/blog-details/${b.id}`} className="blog-title">
-              <h3>{b.title}</h3>
-            </Link>
-          </div>
-        </article>
+        {recent_blogs.map((b, i) => (
+          <article key={i} className="recent-news">
+            <figure
+              className="post-img"
+              style={{
+                backgroundImage: `url(${b.img.src})`,
+              }}
+            ></figure>
+            <div className="post-data">
+              <div className="date">{b.date}</div>
+              <Link href={`/blog-details/${b.id}`} className="blog-title">
+                <h3>{b.title}</h3>
+              </Link>
+            </div>
+          </article>
         ))}
       </div>
 
@@ -97,7 +99,7 @@ const BlogSidebar = () => {
           Let’s talk
         </h3>
         <Link href="/contact" className="tran3s fw-500">
-          Let’s Talk
+          Contact Us
         </Link>
       </div>
     </div>

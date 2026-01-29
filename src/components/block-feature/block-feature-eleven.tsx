@@ -1,11 +1,11 @@
-'use client'
+"use client";
 import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import Link from "next/link";
 // internal
 import service_data from "@/data/service-data";
-import shape from '@/assets/images/shape/shape_44.svg';
+import shape from "@/assets/images/shape/shape_44.svg";
 
 // slider setting
 const slider_setting = {
@@ -33,7 +33,9 @@ const slider_setting = {
 };
 
 const BlockFeatureEleven = () => {
-  const service_items = service_data.filter((s) => s.page === "home-5").slice(0,4);
+  const service_items = service_data
+    .filter((s) => s.page === "home-5")
+    .slice(0, 4);
   return (
     <div className="block-feature-eleven overflow-hidden position-relative mt-225 lg-mt-100 pb-200 lg-pb-100 md-pb-80">
       <div className="container">
@@ -46,8 +48,8 @@ const BlockFeatureEleven = () => {
               Marketing agency with top talented people are providing quality
               services.
             </p>
-            <Link href="/contact" className="btn-eighteen tran3s">
-              Explore All
+            <Link href="/shop" className="btn-eighteen tran3s">
+              Browse Products
             </Link>
           </div>
           <div className="col-lg-7">
@@ -60,12 +62,8 @@ const BlockFeatureEleven = () => {
                         <Image src={s.icon} alt="icon" />
                       </div>
                       <div className="text">
-                        <h4 className="fw-bold mb-25 md-mb-20">
-                          {s.title}
-                        </h4>
-                        <p className="mb-25">
-                          {s.desc}
-                        </p>
+                        <h4 className="fw-bold mb-25 md-mb-20">{s.title}</h4>
+                        <p className="mb-25">{s.desc}</p>
                         <Link href="/service-v1" className="btn-three">
                           <span>Learn More</span>{" "}
                           <i className="bi bi-chevron-right"></i>
@@ -79,7 +77,7 @@ const BlockFeatureEleven = () => {
           </div>
         </div>
       </div>
-      <Image src={shape} alt="shape" className="lazy-img shapes shape_01"/>
+      <Image src={shape} alt="shape" className="lazy-img shapes shape_01" />
     </div>
   );
 };

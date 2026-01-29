@@ -1,11 +1,8 @@
-'use client'
+"use client";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 // internal
-import logo from "@/assets/images/logo/logo_05.svg";
-import icon from "@/assets/images/icon/icon_16.svg";
-import LoginModal from "@/components/common/login-modal";
+import LogoText from "@/components/common/logo-text";
 import useSticky from "@/hooks/use-sticky";
 import Navbar from "./navbar";
 
@@ -20,30 +17,13 @@ const HeaderFive = () => {
           <div className="top-header position-relative">
             <div className="d-flex align-items-center justify-content-between">
               <div className="logo order-lg-0">
-                <Link href="/" className="d-flex align-items-center">
-                  <Image src={logo} alt="logo" />
-                </Link>
+                <LogoText />
               </div>
               <div className="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
                 <ul className="d-flex align-items-center style-none">
-                  <li className="d-flex align-items-center login-btn-one">
-                    <Image
-                      src={icon}
-                      alt="icon"
-                      className="lazy-img icon me-2"
-                    />
-                    <a
-                      href="#"
-                      data-bs-toggle="modal"
-                      data-bs-target="#loginModal"
-                      className="fw-500"
-                    >
-                      Login
-                    </a>
-                  </li>
-                  <li className="d-none d-md-inline-block ms-3 ms-xl-4">
-                    <Link href="/contact" className="btn-fifteen tran3s">
-                      Get Started
+                  <li className="d-none d-md-inline-block">
+                    <Link href="/shop" className="btn-fifteen tran3s">
+                      Shop Now
                     </Link>
                   </li>
                 </ul>
@@ -70,10 +50,6 @@ const HeaderFive = () => {
           </div>
         </div>
       </header>
-
-      {/* login modal start */}
-      <LoginModal />
-      {/* login modal end */}
     </>
   );
 };

@@ -1,12 +1,10 @@
-'use client'
+"use client";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 // internal
 import Navbar from "./navbar";
-import logo from "@/assets/images/logo/logo_01.svg";
+import LogoText from "@/components/common/logo-text";
 import useSticky from "@/hooks/use-sticky";
-import LoginModal from "@/components/common/login-modal";
 
 const HeaderFour = () => {
   const { sticky } = useSticky();
@@ -21,13 +19,11 @@ const HeaderFour = () => {
           <div className="top-header">
             <div className="d-flex align-items-center justify-content-between">
               <div className="logo order-lg-0">
-                <Link href="/" className="d-flex align-items-center">
-                  <Image src={logo} alt="logo" />
-                </Link>
+                <LogoText white />
               </div>
               <div className="right-widget d-none d-md-block ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
-                <Link href="/contact" className="btn-twelve tran3s">
-                  Get Started
+                <Link href="/shop" className="btn-twelve tran3s">
+                  Shop Now
                 </Link>
               </div>
               <nav className="navbar navbar-expand-lg p0 order-lg-2">
@@ -52,10 +48,6 @@ const HeaderFour = () => {
           </div>
         </div>
       </header>
-
-      {/* login modal start */}
-      <LoginModal />
-      {/* login modal end */}
     </>
   );
 };

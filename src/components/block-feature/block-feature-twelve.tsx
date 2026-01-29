@@ -44,7 +44,7 @@ const BlockFeatureTwelve = () => {
                       recommended”
                     </blockquote>
                     <h6>
-                      - Musa Jamy. <span>CEO babun</span>
+                      - Musa Jamy. <span>CEO xaviro</span>
                     </h6>
                   </div>
                 </div>
@@ -62,13 +62,18 @@ const BlockFeatureTwelve = () => {
           {service_items.map((s, i) => (
             <div key={i} className="col-lg-4 d-flex mt-40 md-mt-20">
               <div className="card-style-two bg-white vstack tran3s w-100">
-                <Image src={s.icon} alt="icon" className="lazy-img icon2 me-auto"/>
+                <Image
+                  src={s.icon}
+                  alt="icon"
+                  className="lazy-img icon2 me-auto"
+                />
                 <h4 className="fw-bold mt-50 mb-25">Our Mission</h4>
                 <p className="mb-20">
                   Optimize expense tracking across platforms, & product lines
                   using multiple cards.
                 </p>
-                <Link href="/service-details"
+                <Link
+                  href="/service-details"
                   className="arrow-btn tran3s mt-auto stretched-link"
                 >
                   <Image src={arrow} alt="arrow-icon" className="lazy-img" />
@@ -80,12 +85,13 @@ const BlockFeatureTwelve = () => {
             <div className="card-style-nineteen">
               <div className="row">
                 <div className="col-lg-7">
-                  <h2 className="color-deep fw-bold mt-20">We’r Babun</h2>
+                  <h2 className="color-deep fw-bold mt-20">We’r Xaviro</h2>
                   <p className="text-md mt-30 lg-mt-20 mb-35">
                     Your success is our mission. As business advisors, we offer
                     expert guidance, unlocking your potential
                   </p>
-                  <Link href="/service-v2"
+                  <Link
+                    href="/service-v2"
                     className="btn-seven d-inline-flex align-items-center"
                   >
                     <span className="text">Learn More</span>

@@ -15,11 +15,11 @@ const FancyBannerTwo = () => {
                 Contact our friendly team for quick and helpful answers.
               </p>
               <div className="d-inline-flex flex-wrap justify-content-center">
-                <Link href="/contact" className="btn-four mt-10 me-2">
-                  Get a Quote
+                <Link href="/shop" className="btn-four mt-10 me-2">
+                  Shop Now
                 </Link>
                 <Link href="/contact" className="btn-six mt-10 ms-2">
-                  Contact
+                  Contact Us
                 </Link>
               </div>
             </div>

@@ -13,10 +13,11 @@ const FancyBannerSix = () => {
             <p className="text-white text-xl pt-10 pb-20">
               Apply for loan & get up to $20million with low interest
             </p>
-            <Link href="/contact"
+            <Link
+              href="/shop"
               className="btn-seventeen d-inline-flex align-items-center tran3s"
             >
-              <span className="text">Get Started</span>
+              <span className="text">Shop Now</span>
               <i className="bi bi-arrow-right"></i>
             </Link>
           </div>

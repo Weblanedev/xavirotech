@@ -1,11 +1,11 @@
-import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+import React from "react";
+import Image, { StaticImageData } from "next/image";
 // internal
-import icon_1 from '@/assets/images/icon/icon_90.svg';
-import icon_2 from '@/assets/images/icon/icon_91.svg';
-import icon_3 from '@/assets/images/icon/icon_92.svg';
-import icon_4 from '@/assets/images/assets/ils_07.svg';
-import ContactForm from '../forms/contact-form';
+import icon_1 from "@/assets/images/icon/icon_90.svg";
+import icon_2 from "@/assets/images/icon/icon_91.svg";
+import icon_3 from "@/assets/images/icon/icon_92.svg";
+import icon_4 from "@/assets/images/assets/ils_07.svg";
+import ContactForm from "../forms/contact-form";
 
 // address block item
 function AddressBlock({
@@ -54,7 +54,7 @@ const ContactArea = () => {
                   <AddressBlock
                     icon={icon_3}
                     title="24/7 Support"
-                    subtitle='Send us a message <br/><a href="mailto:accounts@xavirotech.com" className="webaddress">accounts@xavirotech.com</a>'
+                    subtitle='Send us a message <br/><a href="mailto:Accounts@xavirotech.com" className="webaddress">Accounts@xavirotech.com</a>'
                   />
                 </div>
               </div>

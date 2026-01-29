@@ -1,33 +1,38 @@
-'use client';
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+"use client";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 // internal
-import portfolio_data from '@/data/portfolio-data';
-import ImageLightBox from '../common/image-lightbox';
-import Link from 'next/link';
+import portfolio_data from "@/data/portfolio-data";
+import ImageLightBox from "../common/image-lightbox";
+import Link from "next/link";
 
 // img style
 const imgStyle = {
-  width: '100%',
-  height: 'auto',
+  width: "100%",
+  height: "auto",
 };
 
 const PortfolioOne = () => {
+  const [mounted, setMounted] = useState(false);
   const portfolio_items = portfolio_data.filter(
-    p => p.portfolio === 'portfolio-one'
+    (p) => p.portfolio === "portfolio-one",
   );
   // images
-  const images = portfolio_items.map(p => p.img.src);
+  const images = portfolio_items.map((p) => p.img.src);
   // photoIndex
   const [photoIndex, setPhotoIndex] = useState<number>(0);
   // image open state
   const [open, setOpen] = useState(false);
+  useEffect(() => setMounted(true), []);
   // handleImagePopup
   const handleImagePopup = (i: number) => {
     setPhotoIndex(i);
     setOpen(true);
   };
+
+  // ResponsiveMasonry depends on client viewport; avoid SSR hydration mismatch.
+  if (!mounted) return null;
 
   return (
     <>
@@ -51,7 +56,7 @@ const PortfolioOne = () => {
               >
                 <Masonry gutter="40px">
                   {portfolio_items.map((item, i) => (
-                    <div key={i} className="portfolio-item">
+                    <div key={item.id} className="portfolio-item">
                       <div className="portfolio-block-one mb-60 lg-mb-40">
                         <div className="img-holder round-border">
                           <Image
@@ -77,16 +82,13 @@ const PortfolioOne = () => {
                                 ))}
                               </ul> */}
                               <h6>
-                                <Link href="/contact" className="pj-title">
+                                <Link href="/shop" className="pj-title">
                                   {item.title}
                                 </Link>
                               </h6>
                             </div>
                             <div>
-                              <Link
-                                href="/project-details-v1"
-                                className="arrow tran3s"
-                              >
+                              <Link href="/shop" className="arrow tran3s">
                                 <i className="bi bi-arrow-up-right"></i>
                               </Link>
                             </div>
@@ -101,7 +103,7 @@ const PortfolioOne = () => {
 
             <div className="section-btn md-mt-10">
               <Link
-                href="/project-v2"
+                href="/shop"
                 className="btn-nine rounded-circle d-inline-flex align-items-center justify-content-center tran3s"
               >
                 <i className="bi bi-arrow-up-right"></i>

@@ -59,7 +59,7 @@ const portfolio_data: IPortfolio[] = [
   //   img: port_6,
   //   tags: ['BANNER', 'WEB DESIGN'],
   //   sub_title: 'LANDING PAGE',
-  //   title: 'Babun- Landing Page Template',
+  //   title: 'Xaviro - Landing Page Template',
   //   portfolio: 'portfolio-two',
   // },
   // {

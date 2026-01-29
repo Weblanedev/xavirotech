@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -51,19 +51,20 @@ const HeroBannerTwo = () => {
               Empowering businesses with innovative strategies and actionable
               recommendations
             </p>
-            <Link href="/contact"
+            <Link
+              href="/contact"
               className="btn-two icon-link wow fadeInUp"
               data-wow-delay="0.2s"
             >
-              <span>Let’s Talk</span>
+              <span>Contact Us</span>
               <Image src={icon} alt="icon" className="lazy-img icon ms-2" />
             </Link>
           </div>
         </div>
       </div>
-      <Link href="/contact"
+      <Link
+        href="/shop"
         className="more-btn rounded-circle d-flex align-items-center justify-content-center tran3s wow fadeInLeft"
-        target="_blank"
       >
         <i className="bi bi-arrow-up-right"></i>
       </Link>

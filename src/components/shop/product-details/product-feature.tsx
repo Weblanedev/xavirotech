@@ -22,19 +22,19 @@ function CardItem({ icon, title }: { icon: StaticImageData; title: string }) {
 
 const ProductFeature = () => {
   return (
-    <div className="row">
-      <div className="col-lg-3 col-sm-6 wow fadeInUp">
+    <div className="row align-items-center justify-content-center">
+      {/* <div className="col-lg-3 col-sm-6 wow fadeInUp">
         <CardItem icon={icon_1} title="Free Delivery within <br /> 3 days." />
-      </div>
+      </div> */}
       <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
         <CardItem icon={icon_2} title="7 Days refund <br /> policy." />
       </div>
       <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
         <CardItem icon={icon_3} title="Secure payment <br /> methods" />
       </div>
-      <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+      {/* <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
         <CardItem icon={icon_3} title="Store pickup <br /> facility." />
-      </div>
+      </div> */}
     </div>
   );
 };

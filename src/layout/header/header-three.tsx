@@ -1,13 +1,10 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import Link from "next/link";
 // internal
-import Navbar from './navbar';
-import LoginModal from '@/components/common/login-modal';
-import logo from '@/assets/images/logo/logo.svg';
-import icon from '@/assets/images/icon/icon_16.svg';
-import useSticky from '@/hooks/use-sticky';
+import Navbar from "./navbar";
+import LogoText from "@/components/common/logo-text";
+import useSticky from "@/hooks/use-sticky";
 
 const HeaderThree = () => {
   const { sticky } = useSticky();
@@ -15,16 +12,14 @@ const HeaderThree = () => {
     <>
       <header
         className={`theme-main-menu menu-overlay menu-style-three sticky-menu ${
-          sticky ? 'fixed' : ''
+          sticky ? "fixed" : ""
         }`}
       >
         <div className="inner-content">
           <div className="top-header position-relative">
             <div className="d-flex align-items-center justify-content-between">
               <div className="logo order-lg-0">
-                <Link href="/" className="d-flex align-items-center">
-                  <Image src={logo} alt="logo" width={150} />
-                </Link>
+                <LogoText />
               </div>
               {/* <div className="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
                 <ul className="d-flex align-items-center style-none">
@@ -44,8 +39,8 @@ const HeaderThree = () => {
                     </a>
                   </li>
                   <li className="d-none d-md-inline-block ms-3 ms-xl-5">
-                    <Link href="/contact" className="btn-ten tran3s">
-                      Get Started
+                    <Link href="/shop" className="btn-ten tran3s">
+                      Shop Now
                     </Link>
                   </li>
                 </ul>
@@ -70,10 +65,6 @@ const HeaderThree = () => {
           </div>
         </div>
       </header>
-
-      {/* login modal start */}
-      <LoginModal />
-      {/* login modal end */}
     </>
   );
 };

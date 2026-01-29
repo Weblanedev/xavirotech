@@ -8,34 +8,51 @@ import icon_3 from "@/assets/images/icon/icon_11.svg";
 import shape from "@/assets/images/shape/shape_05.svg";
 
 // card item
-function CardItem({icon,title,desc}:{icon:StaticImageData;title:string;desc:string}) {
+function CardItem({
+  icon,
+  title,
+  desc,
+}: {
+  icon: StaticImageData;
+  title: string;
+  desc: string;
+}) {
   return (
     <div className="card-style-three d-flex pt-75 lg-pt-40 pb-45 lg-pb-20">
-      <Image
-        src={icon}
-        alt="icon"
-        className="lazy-img icon"
-      />
+      <Image src={icon} alt="icon" className="lazy-img icon" />
       <div className="ps-4">
         <h4 className="fw-bold mb-20">{title}</h4>
         <p> {desc} </p>
       </div>
     </div>
-  )
+  );
 }
 
-function CounterBlock ({num,text,title,delay}:{num:number;text:string;title:string;delay:string}) {
+function CounterBlock({
+  num,
+  text,
+  title,
+  delay,
+}: {
+  num: number;
+  text: string;
+  title: string;
+  delay: string;
+}) {
   return (
     <div className="col-md-3 col-6">
-      <div className="counter-block-two text-center text-md-start mt-35 wow fadeInUp" 
-      data-wow-delay={`0.${delay}s`}>
+      <div
+        className="counter-block-two text-center text-md-start mt-35 wow fadeInUp"
+        data-wow-delay={`0.${delay}s`}
+      >
         <div className="main-count fw-500">
-          <span className="counter">{num}</span>{text}
+          <span className="counter">{num}</span>
+          {text}
         </div>
         <p className="m0 text-md">{title}</p>
       </div>
     </div>
-  )
+  );
 }
 
 const TextFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
@@ -59,9 +76,13 @@ const TextFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
                   <Link href="/about-us" className="btn-four mt-15 me-4">
                     More About us
                   </Link>
-                  <Link href="/contact" className="btn-three icon-link mt-15">
-                    <span>Request a Callback</span>
-                    <Image src={icon} alt="icon" className="lazy-img icon ms-1"/>
+                  <Link href="/shop" className="btn-three icon-link mt-15">
+                    <span>Browse Products</span>
+                    <Image
+                      src={icon}
+                      alt="icon"
+                      className="lazy-img icon ms-1"
+                    />
                   </Link>
                 </div>
               </div>
@@ -93,25 +114,64 @@ const TextFeatureOne = ({ style_2 = false }: { style_2?: boolean }) => {
                     expert guidance, unlocking your potential for growth and
                     profitability
                   </p>
-                  <Link href="/contact" className="btn-three icon-link mt-15 md-mb-40">
-                    <span>Request a Callback</span>
-                    <Image src={icon} alt="icon" className="lazy-img icon ms-1"/>
+                  <Link
+                    href="/shop"
+                    className="btn-three icon-link mt-15 md-mb-40"
+                  >
+                    <span>Browse Products</span>
+                    <Image
+                      src={icon}
+                      alt="icon"
+                      className="lazy-img icon ms-1"
+                    />
                   </Link>
                 </div>
                 <div className="col-lg-6 ms-auto wow fadeInRight">
-                  <CardItem icon={icon_2} title="Our Mission" desc="Our mission is to reshape lives by offering financial expertise, faster growth, & securing futures through trusted partnerships & innovation." />
-                  <CardItem icon={icon_3} title="Our company vision." desc="Our vision is to create a financially secure future for all, offering innovative solutions & expert guidance to navigate prosperity." />
+                  <CardItem
+                    icon={icon_2}
+                    title="Our Mission"
+                    desc="Our mission is to reshape lives by offering financial expertise, faster growth, & securing futures through trusted partnerships & innovation."
+                  />
+                  <CardItem
+                    icon={icon_3}
+                    title="Our company vision."
+                    desc="Our vision is to create a financially secure future for all, offering innovative solutions & expert guidance to navigate prosperity."
+                  />
                 </div>
               </div>
-              <Image src={shape} alt="shape" className="lazy-img shapes shape_01"/>
+              <Image
+                src={shape}
+                alt="shape"
+                className="lazy-img shapes shape_01"
+              />
             </div>
 
             <div className="counter-wrapper mt-80 lg-mt-20">
               <div className="row">
-                <CounterBlock num={120} text="+" title="Partner with us" delay="0" />
-                <CounterBlock num={1.3} text="b+" title="Cumulative trading volume" delay="1" />
-                <CounterBlock num={705} text="k" title="Successful Projects" delay="2" />
-                <CounterBlock num={1.2} text="%" title="Low interest rate" delay="3" />
+                <CounterBlock
+                  num={120}
+                  text="+"
+                  title="Partner with us"
+                  delay="0"
+                />
+                <CounterBlock
+                  num={1.3}
+                  text="b+"
+                  title="Cumulative trading volume"
+                  delay="1"
+                />
+                <CounterBlock
+                  num={705}
+                  text="k"
+                  title="Successful Projects"
+                  delay="2"
+                />
+                <CounterBlock
+                  num={1.2}
+                  text="%"
+                  title="Low interest rate"
+                  delay="3"
+                />
               </div>
             </div>
           </div>

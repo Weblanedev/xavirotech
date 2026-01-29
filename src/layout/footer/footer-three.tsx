@@ -1,37 +1,35 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 // internal
-import logo from '@/assets/images/logo/logo.svg';
-import shape_1 from '@/assets/images/shape/shape_36.svg';
-import shape_2 from '@/assets/images/shape/shape_37.svg';
-import shape_3 from '@/assets/images/shape/shape_39.svg';
-import FooterSocial from './footer-social';
+import LogoText from "@/components/common/logo-text";
+import shape_1 from "@/assets/images/shape/shape_36.svg";
+import shape_2 from "@/assets/images/shape/shape_37.svg";
+import shape_3 from "@/assets/images/shape/shape_39.svg";
+import FooterSocial from "./footer-social";
 
 const FooterThree = ({ style_2 }: { style_2?: boolean }) => {
   return (
     <div className="footer-three">
       <div className="container">
         <div className="inner-wrapper position-relative">
-          <div className="row justify-content-between">
+          <div className="row justify-content-between align-items-center">
             <div className="col-lg-4 footer-intro mb-30">
               <div
                 className={`round-bg ${
-                  style_2 ? 'color-two' : ''
+                  style_2 ? "color-two" : ""
                 } rounded-circle text-center d-flex flex-column align-items-center justify-content-center`}
               >
                 <div className="logo mb-15">
-                  <Link href="/">
-                    <Image src={logo} alt="logo" width={150} />
-                  </Link>
+                  <LogoText />
                 </div>
-                <p className="lh-sm mb-45 lg-mb-30">
+                {/* <p className="lh-sm mb-45 lg-mb-30">
                   2190 Urban Terrace, Mirpur, <br />
                   Licensed in 50 states.
                 </p>
                 <p className="m0">
                   <Link href="#">+757 699-4478</Link>
-                </p>
+                </p> */}
               </div>
             </div>
             {/* <div className="col-lg-2 col-sm-4 mb-20">
@@ -63,31 +61,19 @@ const FooterThree = ({ style_2 }: { style_2?: boolean }) => {
                 <li>
                   <Link href="/">About us</Link>
                 </li>
-                <li>
-                  <Link href="/">Blogs</Link>
-                </li>
-                <li>
-                  <Link href="/">FAQ’s</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact</Link>
-                </li>
+                {/* <li>
+                  <Link href="/shop">Shop</Link>
+                </li> */}
+                {/* <li>
+                  <Link href="/categories">Categories</Link>
+                </li> */}
               </ul>
             </div>
             <div className="col-xxl-2 col-lg-3 col-sm-4 mb-20">
               <h5 className="footer-title">Support</h5>
               <ul className="footer-nav-link style-none">
                 <li>
-                  <Link href="/">Terms of use</Link>
-                </li>
-                <li>
-                  <Link href="/">Terms & conditions</Link>
-                </li>
-                <li>
-                  <Link href="/">Privacy</Link>
-                </li>
-                <li>
-                  <Link href="/">Cookie policy</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
@@ -110,17 +96,17 @@ const FooterThree = ({ style_2 }: { style_2?: boolean }) => {
             <div className="col-xl-4 col-lg-3 order-lg-3 mb-15">
               <ul className="style-none d-flex align-items-center justify-content-center justify-content-lg-end social-icon">
                 {/* social link */}
-                <FooterSocial />
+                {/* <FooterSocial /> */}
                 {/* social link */}
               </ul>
             </div>
             <div className="col-xl-4 col-lg-6 order-lg-2 mb-15">
               <ul className="style-none bottom-nav d-flex justify-content-center order-lg-last">
                 <li>
-                  <Link href="/contact">Privacy & Terms</Link>
+                  <Link href="/privacy-policy">Privacy</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Cookies</Link>
+                  <Link href="/refund-policy">Refunds</Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact Us</Link>
@@ -129,7 +115,7 @@ const FooterThree = ({ style_2 }: { style_2?: boolean }) => {
             </div>
             <div className="col-xl-4 col-lg-3 order-lg-1 mb-15">
               <div className="copyright text-center text-lg-start order-lg-first">
-                Copyright @{new Date().getFullYear()} babun inc.
+                Copyright @{new Date().getFullYear()} xaviro
               </div>
             </div>
           </div>

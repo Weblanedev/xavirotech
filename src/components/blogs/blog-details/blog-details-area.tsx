@@ -11,8 +11,8 @@ import icon from "@/assets/images/icon/icon_93.svg";
 import BlogDetailsForm from "@/components/forms/blog-details-form";
 import { IBlog } from "@/types/blog-d-t";
 
-const BlogDetailsArea = ({blog}:{blog:IBlog}) => {
-  const {date,title,post_info} = blog || {};
+const BlogDetailsArea = ({ blog }: { blog: IBlog }) => {
+  const { date, title, post_info } = blog || {};
   return (
     <div className="blog-details position-relative mt-150 lg-mt-80 mb-150 lg-mb-80">
       <div className="container">
@@ -48,11 +48,7 @@ const BlogDetailsArea = ({blog}:{blog:IBlog}) => {
                   <div className="quote-wrapper">
                     <div className="wrapper">
                       <div className="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
-                        <Image
-                          src={icon}
-                          alt="icon"
-                          className="lazy-img"
-                        />
+                        <Image src={icon} alt="icon" className="lazy-img" />
                       </div>
                       <div className="row">
                         <div className="col-xxl-9 col-xl-11 m-auto">
@@ -140,19 +136,9 @@ const BlogDetailsArea = ({blog}:{blog:IBlog}) => {
             {/* blog comment area end */}
             <div className="blog-comment-form grey-bg">
               <h3 className="blog-inner-title">Add Your Comments</h3>
-              <p>
-                <a
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginModal"
-                  className="text-decoration-underline fw-500"
-                >
-                  Sign in
-                </a>{" "}
-                to post your comment or signup if you do not have any account.
-              </p>
+              <p>Add your comment below.</p>
               {/* blog details form start */}
-              <BlogDetailsForm/>
+              <BlogDetailsForm />
               {/* blog details form end */}
             </div>
           </div>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,35 +8,46 @@ import { calculateDiscountedPrice } from "@/utils/utils";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { add_to_wishlist } from "@/redux/features/wishlist";
 import { add_cart_product } from "@/redux/features/cart";
+import { notifyError, notifySuccess } from "@/utils/toast";
 
-// img style 
-const  imgStyle = {
-  height:'auto'
-}
+// img style
+const imgStyle = {
+  height: "auto",
+};
 
 const ProductItem = ({ product }: { product: IProduct }) => {
-  const [isWishlistActive,setIsWishlistActive] = useState(false);
-  const [isCartActive,setIsCartActive] = useState(false);
+  const [isWishlistActive, setIsWishlistActive] = useState(false);
+  const [isCartActive, setIsCartActive] = useState(false);
   const { wishlist } = useAppSelector((state) => state.wishlist);
   const { cart_products } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   // handle add wishlist
   const handleAddWishlist = (item: IProduct) => {
     dispatch(add_to_wishlist(item));
+    void notifySuccess(
+      wishlist.some((p) => p.id === item.id)
+        ? `${item.title} removed from wishlist`
+        : `${item.title} added to wishlist`,
+    );
   };
   // handle add cart
   const handleAddCart = (item: IProduct) => {
+    if (item.quantity === 0) {
+      void notifyError(`Out of stock ${item.title}`);
+      return;
+    }
     dispatch(add_cart_product(item));
+    void notifySuccess(`${item.title} added to cart`);
   };
 
   useEffect(() => {
-    if(wishlist.length){
-      setIsWishlistActive(wishlist.some((p) => p.id === product.id))
+    if (wishlist.length) {
+      setIsWishlistActive(wishlist.some((p) => p.id === product.id));
     }
-    if(cart_products.length){
-      setIsCartActive(cart_products.some((p) => p.id === product.id))
+    if (cart_products.length) {
+      setIsCartActive(cart_products.some((p) => p.id === product.id));
     }
-  },[cart_products, product.id, wishlist])
+  }, [cart_products, product.id, wishlist]);
 
   return (
     <div className="product-block-one mb-60 md-mb-40">
@@ -50,7 +61,10 @@ const ProductItem = ({ product }: { product: IProduct }) => {
             alt="product-img"
             className="lazy-img product-img tran4s w-100"
             style={imgStyle}
-          />             
+            // next/image requires width/height for remote URLs
+            width={typeof product.img === "string" ? 600 : undefined}
+            height={typeof product.img === "string" ? 600 : undefined}
+          />
         </Link>
         <button
           onClick={() => handleAddWishlist(product)}

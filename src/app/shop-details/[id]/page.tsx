@@ -1,23 +1,36 @@
-import React from 'react';
-import { Metadata } from 'next';
-import Wrapper from '@/layout/wrapper';
-import HeaderTwo from '@/layout/header/header-two';
-import BreadcrumbOne from '@/components/breadcrumb/breadcrumb-one';
-import FooterThree from '@/layout/footer/footer-three';
-import shop_bg from '@/assets/images/media/img_47.jpg';
-import FancyBannerThree from '@/components/fancy-banner/fancy-banner-three';
-import shape from '@/assets/images/shape/shape_26.svg';
-import ProductDetailsArea from '@/components/shop/product-details/product-details-area';
-import product_data from '@/data/product-data';
-import NewsletterBanner from '@/components/newsletter/newsletter-banner';
+import React from "react";
+import { Metadata } from "next";
+import Wrapper from "@/layout/wrapper";
+import HeaderTwo from "@/layout/header/header-two";
+import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
+import FooterThree from "@/layout/footer/footer-three";
+import shop_bg from "@/assets/images/media/img_47.jpg";
+import FancyBannerThree from "@/components/fancy-banner/fancy-banner-three";
+import shape from "@/assets/images/shape/shape_26.svg";
+import ProductDetailsArea from "@/components/shop/product-details/product-details-area";
+import NewsletterBanner from "@/components/newsletter/newsletter-banner";
+import {
+  getDummyProductById,
+  isTechProduct,
+  mapDummyProductToAppProduct,
+} from "@/lib/dummyjson";
 
 export const metadata: Metadata = {
-  title: 'Shop Details Page',
+  title: "Shop Details Page",
 };
 
 // const ShopDetailsPage = ({ params }: { params: { id: string } }) => {
-const ShopDetailsPage = ({ params }: any) => {
-  const product = product_data.find(p => Number(p.id) === Number(params.id))!;
+const ShopDetailsPage = async ({ params }: any) => {
+  const id = Number(params?.id);
+  let product = null as any;
+  if (!Number.isNaN(id)) {
+    try {
+      const p = await getDummyProductById(id);
+      product = isTechProduct(p) ? mapDummyProductToAppProduct(p) : null;
+    } catch {
+      product = null;
+    }
+  }
   return (
     <Wrapper>
       <div className="main-page-wrapper">

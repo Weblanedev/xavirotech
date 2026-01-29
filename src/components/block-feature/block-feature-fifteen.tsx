@@ -62,8 +62,8 @@ const BlockFeatureFifteen = () => {
           </div>
 
           <div className="text-center mt-40 position-relative line-btn">
-            <Link href="/contact" className="btn-twenty">
-              Apply Now
+            <Link href="/shop" className="btn-twenty">
+              Shop Now
             </Link>
           </div>
 

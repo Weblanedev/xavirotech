@@ -1,85 +1,153 @@
-'use client'
-import React,{useState,useEffect} from "react";
+"use client";
+import React, { useMemo, useState, useEffect } from "react";
+import Link from "next/link";
 // internal
-import product_data from "@/data/product-data";
 import usePagination from "@/hooks/use-pagination";
 import { IProduct } from "@/types/product-d-t";
 import Pagination from "@/ui/pagination";
 import ProductItem from "./product-item";
+import {
+  getDummyCategories,
+  getDummyProducts,
+  isTechProduct,
+  mapDummyProductToAppProduct,
+  normalizeDummyCategory,
+} from "@/lib/dummyjson";
 
 const ShopArea = () => {
-  // State to manage filterable products
-  const [filterableProducts, setFilterableProducts] = useState([...product_data]);
-  const { currentItems, handlePageClick, pageCount } = usePagination<IProduct>(filterableProducts, 9);
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [sort, setSort] = useState<"default" | "low" | "high" | "new">(
+    "default",
+  );
+  const [loading, setLoading] = useState(true);
 
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = event.target.value;
-    let updatedProducts = [...product_data]; // Create a copy
-    if (value === 'low') {
-      updatedProducts = updatedProducts.slice().sort((a, b) => Number(a.price) - Number(b.price));
-    } else if (value === 'high') {
-      updatedProducts = updatedProducts.slice().sort((a, b) => Number(b.price) - Number(a.price));
+  const filteredAndSortedProducts = useMemo(() => {
+    let list = [...products];
+    if (selectedCategory) {
+      list = list.filter((p) => p.category === selectedCategory);
     }
-    else if (value === 'books') {
-      updatedProducts = updatedProducts.filter(item => item.category === 'books');
+    if (sort === "low") {
+      list.sort((a, b) => Number(a.price) - Number(b.price));
+    } else if (sort === "high") {
+      list.sort((a, b) => Number(b.price) - Number(a.price));
+    } else if (sort === "new") {
+      list.sort((a, b) => Number(b.id) - Number(a.id));
     }
-    else if (value === 'visiting-card') {
-      updatedProducts = updatedProducts.filter(item => item.category === 'visiting-card');
-    }
-    else if (value === 'magazine') {
-      updatedProducts = updatedProducts.filter(item => item.category === 'magazine');
-    }
-    else if (value === 'trending') {
-      updatedProducts = updatedProducts.filter(item => item.reviews.some(review => review.rating > 3));
-    }
-    else if (value === 'new') {
-      updatedProducts = updatedProducts.slice(-10);
-    }
-    setFilterableProducts(updatedProducts);
-  };
+    return list;
+  }, [products, selectedCategory, sort]);
+
+  const { currentItems, handlePageClick, pageCount } = usePagination<IProduct>(
+    filteredAndSortedProducts,
+    9,
+  );
 
   useEffect(() => {
-  }, [filterableProducts]);
+    let mounted = true;
+    async function load() {
+      try {
+        setLoading(true);
+        const [productsRes, cats] = await Promise.all([
+          getDummyProducts({ limit: 100, skip: 0 }),
+          getDummyCategories(),
+        ]);
+        if (!mounted) return;
+        const techProducts = productsRes.products.filter(isTechProduct);
+        setProducts(techProducts.map(mapDummyProductToAppProduct));
+        const normalized = cats
+          .map(normalizeDummyCategory)
+          .map((c) => c.trim())
+          .filter(Boolean);
+        // categories should only come from the products we actually show
+        setCategories(
+          Array.from(
+            new Set(techProducts.map((p) => p.category).filter(Boolean)),
+          ),
+        );
+      } catch {
+        if (!mounted) return;
+        setProducts([]);
+        setCategories([]);
+      } finally {
+        if (!mounted) return;
+        setLoading(false);
+      }
+    }
+    load();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   return (
     <div className="product-section-one mt-150 lg-mt-80 mb-150 lg-mb-60">
       <div className="container">
         <div className="shop-page-header d-lg-flex align-items-center justify-content-between">
           <p className="m0 md-pb-20">
-            Showing <span className="fw-500 text-dark">1–{currentItems.length}</span> of{" "}
-            <span className="fw-500 text-dark">{product_data.length}</span> results
+            {loading ? (
+              <>Loading products…</>
+            ) : (
+              <>
+                Showing{" "}
+                <span className="fw-500 text-dark">
+                  1–{currentItems.length}
+                </span>{" "}
+                of{" "}
+                <span className="fw-500 text-dark">
+                  {filteredAndSortedProducts.length}
+                </span>{" "}
+                results
+              </>
+            )}
           </p>
           <ul className="shop-filter-one style-none d-md-flex align-items-center">
             <li className="me-md-3 sm-mb-10">
-              <select onChange={handleSelectChange} className="theme-select-menu">
-                <option value="price">Price</option>
+              <select
+                value={sort}
+                onChange={(e) => setSort(e.target.value as any)}
+                className="theme-select-menu"
+              >
+                <option value="default">Sort</option>
                 <option value="low">Price: low to high</option>
                 <option value="high">Price: high to low</option>
+                <option value="new">Newest</option>
               </select>
             </li>
             <li className="me-md-3 sm-mb-10">
-              <select onChange={handleSelectChange} className="theme-select-menu">
-                <option value="">Category</option>
-                <option value="books">Books</option>
-                <option value="visiting-card">Visiting Card</option>
-                <option value="magazine">Magazine</option>
-              </select>
-            </li>
-            <li>
-              <select onChange={handleSelectChange} className="theme-select-menu">
-                <option value="">Popularity</option>
-                <option value="trending">Trending items</option>
-                <option value="new">Newest items</option>
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="theme-select-menu"
+              >
+                <option value="">All categories</option>
+                {categories.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
               </select>
             </li>
           </ul>
         </div>
 
         <div className="products-wrapper mt-40">
+          {!loading && filteredAndSortedProducts.length === 0 && (
+            <div className="text-center pt-20 pb-20">
+              <h4>No products found.</h4>
+              <p className="m0">
+                Try choosing a different category or{" "}
+                <Link href="/categories">browse all categories</Link>.
+              </p>
+            </div>
+          )}
+
           <div className="row gx-xxl-5">
-            {currentItems?.map((product,i) => (
+            {currentItems?.map((product, i) => (
               <div
                 key={product.id}
-                className="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay={`0.${i}s`}
+                className="col-lg-4 col-sm-6 wow fadeInUp"
+                data-wow-delay={`0.${i}s`}
               >
                 <ProductItem product={product} />
               </div>
@@ -87,7 +155,10 @@ const ShopArea = () => {
           </div>
 
           <div className="pagination-one mt-30 lg-mt-10">
-            <Pagination handlePageClick={handlePageClick} pageCount={pageCount} />
+            <Pagination
+              handlePageClick={handlePageClick}
+              pageCount={pageCount}
+            />
           </div>
         </div>
       </div>

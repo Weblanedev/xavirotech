@@ -1,17 +1,17 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 // internal
 // import screen from '@/assets/images/assets/screen_06.svg';
-import icon from '@/assets/images/icon/icon_31.svg';
+import icon from "@/assets/images/icon/icon_31.svg";
 // import businessman from '@/assets/images/assets/businessman.png';
-import businessman from '@/assets/images/assets/laptop.png';
+import businessman from "@/assets/images/assets/laptop.png";
 
-import shape from '@/assets/images/assets/round_shape.png';
+import shape from "@/assets/images/assets/round_shape.png";
 
 // style
 const imageStyle = {
-  height: 'auto',
+  height: "auto",
 };
 
 const HeroBannerThree = () => {
@@ -24,8 +24,8 @@ const HeroBannerThree = () => {
             <p className="text-lg pt-35 lg-pt-30 pb-35 lg-pb-20">
               Technology store with High-end tech and Low-end pricing
             </p>
-            <Link href="/contact" className="btn-ten tran3s">
-              Get Started
+            <Link href="/shop" className="btn-ten tran3s">
+              Shop Now
             </Link>
           </div>
           <div className="col-xl-3 col-md-4 wow fadeInRight">
@@ -41,7 +41,7 @@ const HeroBannerThree = () => {
               <p className="lh-base text-md mt-70 lg-mt-30 mb-60 lg-mb-30">
                 <span className="fw-500 text-dark text-decoration-underline">
                   Over 50+
-                </span>{' '}
+                </span>{" "}
                 organizations using our service without any hassle.
               </p>
               <div className="row align-items-center">

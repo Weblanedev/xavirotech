@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getLocalStorage, setLocalStorage } from "@/utils/localstorage";
-import { notifyError, notifySuccess } from "@/utils/toast";
 import { IProduct } from "@/types/product-d-t";
 
 
@@ -19,12 +18,10 @@ export const wishlistSlice = createSlice({
       );
       if (!isExist) {
         state.wishlist.push(payload);
-        notifySuccess(`${payload.title} added to wishlist`);
       } else {
         state.wishlist = state.wishlist.filter(
           (item: IProduct) => item.id !== payload.id
         );
-        notifyError(`${payload.title} removed from wishlist`);
       }
       setLocalStorage("wishlist_items", state.wishlist);
     },
@@ -32,7 +29,6 @@ export const wishlistSlice = createSlice({
       state.wishlist = state.wishlist.filter(
         (item: IProduct) => item.id !== payload.id
       );
-      notifyError(`${payload.title} removed from wishlist`);
       setLocalStorage("wishlist_items", state.wishlist);
     },
     getWishlistProducts:(state) => {

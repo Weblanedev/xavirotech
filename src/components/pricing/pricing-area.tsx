@@ -179,8 +179,8 @@ const PricingArea = () => {
               </h2>
             </div>
             <div className="col-lg-4 text-center text-lg-end">
-              <Link href="/contact" className="btn-four">
-                Let’s Talk
+              <Link href="/shop" className="btn-four">
+                Browse Products
               </Link>
             </div>
           </div>

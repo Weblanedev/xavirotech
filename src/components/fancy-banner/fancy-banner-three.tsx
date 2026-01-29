@@ -20,7 +20,8 @@ const FancyBannerThree = () => {
               </p>
             </div>
             <div className="col-lg-4 col-md-3">
-              <Link href="/contact"
+              <Link
+                href="/contact"
                 className="quote-btn tran5s rounded-circle d-flex align-items-center justify-content-center ms-auto"
               >
                 <Image src={icon} alt="icon" className="lazy-img" />

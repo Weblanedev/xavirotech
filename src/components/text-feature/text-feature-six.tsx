@@ -9,8 +9,8 @@ import shape_2 from "@/assets/images/shape/shape_16.svg";
 
 // image style
 const imgStyle = {
-  height:'auto'
-}
+  height: "auto",
+};
 
 const TextFeatureSix = () => {
   return (
@@ -26,8 +26,8 @@ const TextFeatureSix = () => {
               <p className="text-lg mb-35 pe-xl-5 me-xl-4">
                 Digital agency with top rated talented people provide quality.
               </p>
-              <Link href="/contact" className="btn-thirteen tran3s me-5">
-                Apply Now
+              <Link href="/shop" className="btn-thirteen tran3s me-5">
+                Shop Now
               </Link>
             </div>
             <div className="col-lg-4 ms-auto">
@@ -59,7 +59,12 @@ const TextFeatureSix = () => {
             </div>
           </div>
           <div className="media-wrapper">
-            <Image src={hand} alt="hand-img" className="lazy-img w-100" style={imgStyle} />
+            <Image
+              src={hand}
+              alt="hand-img"
+              className="lazy-img w-100"
+              style={imgStyle}
+            />
             <Image
               src={screen}
               alt="screen-img"
