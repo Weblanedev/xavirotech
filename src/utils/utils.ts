@@ -15,10 +15,10 @@ export const animationCreate = () => {
   }
 };
 
-export const calculateDiscountedPrice = (price:number, discount:number) => {
+export const calculateDiscountedPrice = (price: number, discount: number): number => {
   // Supports both:
   // - discount as percentage (e.g. 15 means 15%)
   // - discount as fraction (e.g. 0.15 means 15%)
   const d = discount <= 1 ? discount : discount / 100;
-  return (price - price * d).toFixed(2);
+  return Number((price - price * d).toFixed(2));
 };
