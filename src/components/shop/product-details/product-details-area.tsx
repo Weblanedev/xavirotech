@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 // internal
 import { IProduct } from "@/types/product-d-t";
+import { formatNaira } from "@/utils/currency";
 import ProductFeature from "./product-feature";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { add_cart_product, decrement, increment } from "@/redux/features/cart";
@@ -99,7 +100,8 @@ const ProductDetailsArea = ({ product }: { product: IProduct }) => {
                 </li>
               </ul>
               <div className="price">
-                {old_price && <del>${old_price}</del>} ${price}
+                {old_price && <del>{formatNaira(old_price)}</del>}{" "}
+                {formatNaira(price)}
               </div>
               <p className="availability">{quantity} Piece Available </p>
               <p className="description-text">{sm_desc}</p>

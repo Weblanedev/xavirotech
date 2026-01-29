@@ -4,7 +4,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
 import FooterThree from "@/layout/footer/footer-three";
-import shop_bg from "@/assets/images/media/img_47.jpg";
 import FancyBannerThree from "@/components/fancy-banner/fancy-banner-three";
 import shape from "@/assets/images/shape/shape_26.svg";
 import ProductDetailsArea from "@/components/shop/product-details/product-details-area";
@@ -43,7 +42,7 @@ const ShopDetailsPage = async ({ params }: any) => {
             title="Our Product Showcase"
             subtitle="Meet our products, guiding you through financial intricacies with precision"
             page="Shop"
-            bg_img={shop_bg}
+            bg_img="/assets/images/media/img_47.jpg"
             shape={shape}
           />
           {/* breadcrumb end */}

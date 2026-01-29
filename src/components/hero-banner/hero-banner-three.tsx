@@ -2,12 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 // internal
-// import screen from '@/assets/images/assets/screen_06.svg';
 import icon from "@/assets/images/icon/icon_31.svg";
-// import businessman from '@/assets/images/assets/businessman.png';
-import businessman from "@/assets/images/assets/laptop.png";
-
-import shape from "@/assets/images/assets/round_shape.png";
 
 // style
 const imageStyle = {
@@ -60,15 +55,14 @@ const HeroBannerThree = () => {
         </div>
       </div>
       <div className="img-wrapper">
-        <Image
-          src={businessman}
+        <img
+          src="/assets/images/assets/laptop.png"
           alt="businessman"
           className="lazy-img m-auto"
           style={imageStyle}
-          // height={533}
         />
-        <Image
-          src={shape}
+        <img
+          src="/assets/images/assets/round_shape.png"
           alt="shape"
           className="lazy-img round-bg"
           style={imageStyle}

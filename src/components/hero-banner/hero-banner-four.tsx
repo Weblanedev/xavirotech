@@ -2,8 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 // internal
-import screen_1 from "@/assets/images/assets/screen_12.png";
-import screen_2 from "@/assets/images/assets/screen_13.png";
 import screen_3 from "@/assets/images/assets/screen_21.svg";
 import shape from "@/assets/images/shape/shape_14.svg";
 
@@ -40,8 +38,8 @@ const HeroBannerFour = () => {
                 Shop Now
               </Link>
               <div className="d-flex align-items-center md-mt-20">
-                <Image
-                  src={screen_1}
+                <img
+                  src="/assets/images/assets/screen_12.png"
                   alt="screen"
                   className="lazy-img avatar"
                   style={imgStyle}
@@ -58,8 +56,8 @@ const HeroBannerFour = () => {
         </div>
       </div>
       <div className="media-wrapper wow fadeInUp">
-        <Image
-          src={screen_2}
+        <img
+          src="/assets/images/assets/screen_13.png"
           alt="screen"
           className="lazy-img w-100"
           style={imgStyle}

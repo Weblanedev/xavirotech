@@ -5,6 +5,7 @@ import Link from "next/link";
 // internal
 import { IProduct } from "@/types/product-d-t";
 import { calculateDiscountedPrice } from "@/utils/utils";
+import { formatNaira } from "@/utils/currency";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { add_to_wishlist } from "@/redux/features/wishlist";
 import { add_cart_product } from "@/redux/features/cart";
@@ -112,7 +113,9 @@ const ProductItem = ({ product }: { product: IProduct }) => {
           </ul>
         </div>
         <div className="price">
-          ${calculateDiscountedPrice(product.price, product.discount)}
+          {formatNaira(
+            calculateDiscountedPrice(product.price, product.discount),
+          )}
         </div>
       </div>
     </div>

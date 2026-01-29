@@ -1,12 +1,16 @@
-'use client'
+"use client";
 import React from "react";
-import Image, { StaticImageData } from "next/image";
 import Slider from "react-slick";
-import logo_1 from "@/assets/images/logo/media_01.png";
-import logo_2 from "@/assets/images/logo/media_02.png";
-import logo_3 from "@/assets/images/logo/media_03.png";
-import logo_4 from "@/assets/images/logo/media_04.png";
-import logo_5 from "@/assets/images/logo/media_05.png";
+
+const slider_logos = [
+  "/assets/images/logo/media_01.png",
+  "/assets/images/logo/media_02.png",
+  "/assets/images/logo/media_03.png",
+  "/assets/images/logo/media_04.png",
+  "/assets/images/logo/media_05.png",
+  "/assets/images/logo/media_03.png",
+  "/assets/images/logo/media_01.png",
+];
 
 // slider setting
 const slider_setting = {
@@ -39,16 +43,13 @@ const slider_setting = {
   ],
 };
 
-// slider logos
-const slider_logos:StaticImageData[] = [logo_1, logo_2, logo_3, logo_4, logo_5, logo_3, logo_1];
-
 const PartnersSliderOne = () => {
   return (
     <Slider {...slider_setting} className="partner-slider-one">
       {slider_logos.map((logo, i) => (
         <div key={i} className="item">
           <div className="logo d-flex align-items-center justify-content-center">
-            <Image src={logo} alt="logo" style={{ height: "auto" }} />
+            <img src={logo} alt="logo" style={{ height: "auto" }} />
           </div>
         </div>
       ))}

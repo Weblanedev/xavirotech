@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -27,7 +27,7 @@ const slider_setting = {
   ],
 };
 
-const FeedbackFour = ({spacing}:{spacing?:string}) => {
+const FeedbackFour = ({ spacing }: { spacing?: string }) => {
   const sliderRef = useRef<Slider | null>(null);
 
   const sliderPrev = () => {
@@ -38,7 +38,9 @@ const FeedbackFour = ({spacing}:{spacing?:string}) => {
     sliderRef.current?.slickNext();
   };
   return (
-    <div className={`feedback-section-four ${spacing?spacing:'mt-180 lg-mt-80'}`}>
+    <div
+      className={`feedback-section-four ${spacing ? spacing : "mt-180 lg-mt-80"}`}
+    >
       <div className="container">
         <div className="position-relative">
           <div className="title-two">
@@ -48,7 +50,11 @@ const FeedbackFour = ({spacing}:{spacing?:string}) => {
             Optimize expense tracking across platforms, & product lines using
             multiple cards.
           </p>
-          <Slider {...slider_setting} ref={sliderRef} className="feedback-slider-four">
+          <Slider
+            {...slider_setting}
+            ref={sliderRef}
+            className="feedback-slider-four"
+          >
             {feedback_four.map((item, i) => (
               <div key={i} className="item">
                 <div className="feedback-block-four tran3s">
@@ -72,15 +78,13 @@ const FeedbackFour = ({spacing}:{spacing?:string}) => {
                     </ul>
                     <Image src={icon} alt="icon" className="icon" />
                   </div>
-                  <blockquote>
-                   {item.desc}
-                  </blockquote>
+                  <blockquote>{item.desc}</blockquote>
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="d-flex align-items-center">
                       <div className="name fw-500 text-dark">{item.name},</div>
                       <p className="m0 opacity-75">{item.location}</p>
                     </div>
-                    <Image
+                    <img
                       src={item.user!}
                       alt="user"
                       className="avatar rounded-circle"

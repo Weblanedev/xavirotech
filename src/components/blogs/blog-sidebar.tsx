@@ -51,7 +51,7 @@ const BlogSidebar = () => {
             <figure
               className="post-img"
               style={{
-                backgroundImage: `url(${b.img.src})`,
+                backgroundImage: `url(${b.img})`,
               }}
             ></figure>
             <div className="post-data">

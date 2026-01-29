@@ -4,13 +4,13 @@ import Image from "next/image";
 import Slider from "react-slick";
 import Link from "next/link";
 // internal
-import bg_1 from "@/assets/images/media/img_01.jpg";
-import bg_2 from "@/assets/images/media/img_02.jpg";
-import bg_3 from "@/assets/images/media/img_03.jpg";
 import icon from "@/assets/images/icon/icon_02.svg";
 
-// slider bg
-const slider_bg = [bg_1, bg_2, bg_3];
+const slider_bg = [
+  "/assets/images/media/img_01.jpg",
+  "/assets/images/media/img_02.jpg",
+  "/assets/images/media/img_03.jpg",
+];
 // slider setting
 const slider_setting = {
   dots: false,
@@ -31,7 +31,7 @@ const HeroBannerTwo = () => {
           <div className="item m0" key={i}>
             <div
               className="hero-img"
-              style={{ backgroundImage: `url(${bg.src})` }}
+              style={{ backgroundImage: `url(${bg})` }}
             ></div>
           </div>
         ))}

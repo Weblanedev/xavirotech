@@ -1,17 +1,13 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-// internal
-import avatar_1 from "@/assets/images/blog/avatar_01.jpg";
-import avatar_2 from "@/assets/images/blog/avatar_02.jpg";
 
 const BlogDetailsCommentArea = () => {
   return (
     <div className="blog-comment-area grey-bg">
       <h3 className="blog-inner-title pb-15">Comments</h3>
       <div className="comment d-flex">
-        <Image
-          src={avatar_1}
+        <img
+          src="/assets/images/blog/avatar_01.jpg"
           alt="avatar"
           className="lazy-img user-avatar rounded-circle"
         />
@@ -29,8 +25,8 @@ const BlogDetailsCommentArea = () => {
             Reply
           </Link>
           <div className="comment reply-comment d-flex">
-            <Image
-              src={avatar_1}
+            <img
+              src="/assets/images/blog/avatar_01.jpg"
               alt="avatar"
               className="lazy-img user-avatar rounded-circle"
             />
@@ -51,8 +47,8 @@ const BlogDetailsCommentArea = () => {
         </div>
       </div>
       <div className="comment d-flex">
-        <Image
-          src={avatar_2}
+        <img
+          src="/assets/images/blog/avatar_02.jpg"
           alt="avatar"
           className="lazy-img user-avatar rounded-circle"
         />

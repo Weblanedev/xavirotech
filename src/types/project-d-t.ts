@@ -1,5 +1,3 @@
-import { StaticImageData } from "next/image";
-
 export interface IProject {
   id: number;
   title: string;
@@ -7,7 +5,7 @@ export interface IProject {
   body_desc: string;
   body_subtitle: string;
   body_lists: string[];
-  bg_img: StaticImageData;
+  bg_img: string;
   video_id: string;
   isShow?: boolean;
   parent?: string;

@@ -4,7 +4,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
 import FooterThree from "@/layout/footer/footer-three";
-import service_bg from "@/assets/images/media/img_32.jpg";
 import FancyBannerThree from "@/components/fancy-banner/fancy-banner-three";
 import shape from "@/assets/images/shape/shape_27.svg";
 import ServiceDetailsArea from "@/components/services/service-details-area";
@@ -28,7 +27,7 @@ const ServiceDetailsPage = () => {
             subtitle="Offering solutions & services to address a spectrum of financial issues"
             page="Services"
             shape={shape}
-            bg_img={service_bg}
+            bg_img="/assets/images/media/img_32.jpg"
             style_2={true}
             cls="me-xl-4"
           />

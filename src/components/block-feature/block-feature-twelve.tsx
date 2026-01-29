@@ -6,7 +6,6 @@ import icon_1 from "@/assets/images/icon/icon_97.svg";
 import icon_2 from "@/assets/images/icon/icon_27.svg";
 import shape from "@/assets/images/shape/shape_45.svg";
 import arrow from "@/assets/images/icon/icon_09.svg";
-import business_man from "@/assets/images/assets/businessman_02.png";
 import service_data from "@/data/service-data";
 
 // img style
@@ -49,8 +48,8 @@ const BlockFeatureTwelve = () => {
                   </div>
                 </div>
                 <div className="col-lg-5 d-flex align-items-end justify-content-center order-lg-first">
-                  <Image
-                    src={business_man}
+                  <img
+                    src="/assets/images/assets/businessman_02.png"
                     alt="man-img"
                     className="lazy-img"
                     style={imgStyle}

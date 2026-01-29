@@ -2,7 +2,6 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 // internal
-import screen from "@/assets/images/assets/screen_15.png";
 import icon_1 from "@/assets/images/icon/icon_43.svg";
 import icon_2 from "@/assets/images/icon/icon_44.svg";
 import icon_3 from "@/assets/images/icon/icon_45.svg";
@@ -54,9 +53,7 @@ const TextFeatureSeven = () => {
                 <li>Strong security system.</li>
               </ul>
               <div className="d-flex justify-content-between align-items-center mt-65 lg-mt-50">
-                <Link href="/about-us"
-                  className="btn-thirteen tran3 flex-fill"
-                >
+                <Link href="/about-us" className="btn-thirteen tran3 flex-fill">
                   Learn More
                 </Link>
                 <Link href="/about-us" className="btn-fourteen tran3s">
@@ -67,8 +64,8 @@ const TextFeatureSeven = () => {
           </div>
           <div className="col-lg-6 col-md-8 m-auto wow fadeInLeft">
             <div className="media-wrapper md-mt-60">
-              <Image
-                src={screen}
+              <img
+                src="/assets/images/assets/screen_15.png"
                 alt="screen"
                 className="lazy-img"
                 style={imgStyle}

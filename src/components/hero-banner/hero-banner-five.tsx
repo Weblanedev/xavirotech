@@ -1,15 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-// internal
-import businessman from "@/assets/images/assets/businessman_01.png";
-import screen from "@/assets/images/assets/screen_18.png";
-import sticker from "@/assets/images/assets/sticker.png";
 
 // img style
-const imgStyle = {
-  height: "auto",
-};
+const imgStyle = { height: "auto" };
 
 const HeroBannerFive = () => {
   return (
@@ -40,20 +33,20 @@ const HeroBannerFive = () => {
           </div>
         </div>
         <div className="media-wrapper ps-5 pe-5 d-flex align-items-end">
-          <Image
-            src={businessman}
+          <img
+            src="/assets/images/assets/businessman_01.png"
             alt="image"
             className="lazy-img me-auto ms-auto"
             style={imgStyle}
           />
-          <Image
-            src={screen}
+          <img
+            src="/assets/images/assets/screen_18.png"
             alt="image"
             className="lazy-img shapes shape_01"
             style={imgStyle}
           />
-          <Image
-            src={sticker}
+          <img
+            src="/assets/images/assets/sticker.png"
             alt="image"
             className="lazy-img shapes shape_02"
             style={imgStyle}

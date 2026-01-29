@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -18,9 +18,11 @@ const slider_setting = {
   autoplaySpeed: 3000,
 };
 
-const FeedbackOne = ({cls}:{cls?:string}) => {
+const FeedbackOne = ({ cls }: { cls?: string }) => {
   return (
-    <div className={`feedback-section-one ${cls?cls:'mt-150 lg-mt-80 pb-80'}`}>
+    <div
+      className={`feedback-section-one ${cls ? cls : "mt-150 lg-mt-80 pb-80"}`}
+    >
       <div className="container">
         <div className="position-relative">
           <div className="title-one sm-mb-40">
@@ -36,8 +38,8 @@ const FeedbackOne = ({cls}:{cls?:string}) => {
                     <div className="col-md-7 ms-auto order-md-last">
                       <blockquote>{item.desc}</blockquote>
                       <div className="d-flex align-items-center">
-                        <Image
-                          src={item.user}
+                        <img
+                          src={item.user!}
                           alt="user"
                           className="avatar rounded-circle"
                         />
@@ -56,7 +58,7 @@ const FeedbackOne = ({cls}:{cls?:string}) => {
                           <span className="text-dark">
                             {item.id < 10 ? `0${item.id}` : item.id}
                           </span>{" "}
-                          / {" "}
+                          /{" "}
                           {feedback_one.length < 10
                             ? `0${feedback_one.length}`
                             : feedback_one.length}

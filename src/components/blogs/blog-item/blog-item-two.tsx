@@ -15,9 +15,10 @@ const BlogItemTwo = ({ blog }: { blog: IBlog }) => {
       </div>
       <figure
         className="post-img position-relative d-flex justify-content-end align-items-end m0"
-        style={{ backgroundImage: `url(${blog.img.src})` }}
+        style={{ backgroundImage: `url(${blog.img})` }}
       >
-        <Link href={`/blog-details/${blog.id}`}
+        <Link
+          href={`/blog-details/${blog.id}`}
           className="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
         >
           <i className="bi bi-arrow-up-right"></i>

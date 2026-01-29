@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import screen from "@/assets/images/assets/screen_01.png";
 
 const FancyBannerOne = () => {
   return (
@@ -17,11 +15,11 @@ const FancyBannerOne = () => {
               <h3 className="fw-bold">1.75 million+</h3>
               <p className="text-md m0">Worldwide clients</p>
             </div>
-            <Image
-              src={screen}
+            <img
+              src="/assets/images/assets/screen_01.png"
               alt="screen"
               className="lazy-img screen me-xxl-5"
-              style={{height:'auto'}}
+              style={{ height: "auto" }}
             />
           </div>
         </div>

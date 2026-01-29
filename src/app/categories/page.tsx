@@ -5,7 +5,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import FooterThree from "@/layout/footer/footer-three";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
-import shop_bg from "@/assets/images/media/img_47.jpg";
 import shape from "@/assets/images/shape/shape_26.svg";
 import { getDummyProducts, isTechProduct } from "@/lib/dummyjson";
 
@@ -32,7 +31,7 @@ export default async function CategoriesPage() {
             title="Shop Categories"
             subtitle="Browse laptops, computers and accessories by category"
             page="Categories"
-            bg_img={shop_bg}
+            bg_img="/assets/images/media/img_47.jpg"
             shape={shape}
           />
 

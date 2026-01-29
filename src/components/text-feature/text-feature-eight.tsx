@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 // internal
-import screen from "@/assets/images/assets/screen_16.png";
 import { IFaq } from "@/data/faq-data";
 import FaqItem from "../faq/faq-item";
 import Link from "next/link";
@@ -71,7 +70,8 @@ const TextFeatureEight = ({ style_2 = false }: { style_2?: boolean }) => {
                       <FaqItem key={i} {...faq} parent="accordionOne" />
                     ))}
                   </div>
-                  <Link href="/about-us"
+                  <Link
+                    href="/about-us"
                     className="btn-thirteen tran3 flex-fill"
                   >
                     Learn More
@@ -80,8 +80,8 @@ const TextFeatureEight = ({ style_2 = false }: { style_2?: boolean }) => {
               </div>
               <div className="col-lg-6 col-md-8 m-auto wow fadeInRight">
                 <div className="media-wrapper md-mt-40">
-                  <Image
-                    src={screen}
+                  <img
+                    src="/assets/images/assets/screen_16.png"
                     alt="screen"
                     className="lazy-img ms-auto"
                     style={imgStyle}
@@ -111,7 +111,12 @@ const TextFeatureEight = ({ style_2 = false }: { style_2?: boolean }) => {
                   id="accordionOne"
                 >
                   {faq_data_2.map((faq, i) => (
-                    <FaqItem key={i} {...faq} parent="accordionOne" cls="fw-bold" />
+                    <FaqItem
+                      key={i}
+                      {...faq}
+                      parent="accordionOne"
+                      cls="fw-bold"
+                    />
                   ))}
                 </div>
               </div>

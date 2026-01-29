@@ -1,8 +1,6 @@
-import { StaticImageData } from "next/image";
-
 export interface IPortfolio {
   id: number;
-  img: StaticImageData;
+  img: string;
   tags: string[];
   title: string;
   portfolio: string;

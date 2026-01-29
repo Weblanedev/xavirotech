@@ -4,7 +4,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
 import FooterThree from "@/layout/footer/footer-three";
-import testi_bg from "@/assets/images/media/img_32.jpg";
 import FancyBannerThree from "@/components/fancy-banner/fancy-banner-three";
 import shape from "@/assets/images/shape/shape_32.svg";
 import FeedbackFour from "@/components/feedback/feedback-four";
@@ -30,7 +29,7 @@ const TestimonialPage = () => {
             title="Our clients word"
             subtitle="Check what’s our client say about us and explore their thought’s."
             page="Testimonials"
-            bg_img={testi_bg}
+            bg_img="/assets/images/media/img_32.jpg"
             shape={shape}
             style_2={true}
             cls="me-xl-4"

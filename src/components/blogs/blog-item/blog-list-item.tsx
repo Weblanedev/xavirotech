@@ -7,10 +7,13 @@ const BlogListItem = ({ blog }: { blog: IBlog }) => {
     <article className="blog-meta-two style-two mb-50 lg-mb-40">
       <figure
         className="post-img position-relative d-flex align-items-end m0"
-        style={{ backgroundImage: `url(${blog.img.src})` }}
+        style={{ backgroundImage: `url(${blog.img})` }}
       >
-        <Link href={`/blog-details/${blog.id}`} className="stretched-link date tran3s">
-        {blog.date.split(" ")[0]} {blog.date.split(" ")[1]}
+        <Link
+          href={`/blog-details/${blog.id}`}
+          className="stretched-link date tran3s"
+        >
+          {blog.date.split(" ")[0]} {blog.date.split(" ")[1]}
         </Link>
       </figure>
       <div className="post-data">
@@ -19,7 +22,8 @@ const BlogListItem = ({ blog }: { blog: IBlog }) => {
           <Link href={`/blog-details/${blog.id}`} className="blog-title">
             <h4>{blog.title}</h4>
           </Link>
-          <Link href={`/blog-details/${blog.id}`}
+          <Link
+            href={`/blog-details/${blog.id}`}
             className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
           >
             <i className="bi bi-arrow-up-right"></i>

@@ -31,9 +31,10 @@ const ContactForm = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
+    mode: "onChange",
   });
   const onValid = (_data: FormData) => {
     notifySuccess("Message received! We’ll get back to you shortly.");
@@ -91,7 +92,11 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="col-12">
-          <button type="submit" className="btn-four tran3s w-100 d-block">
+          <button
+            type="submit"
+            className="btn-four tran3s w-100 d-block"
+            disabled={!isValid}
+          >
             Send Message
           </button>
         </div>

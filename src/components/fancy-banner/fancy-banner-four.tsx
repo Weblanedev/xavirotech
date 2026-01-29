@@ -2,14 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 // internal
-import playstore from '@/assets/images/icon/playstore.svg';
-import apple from '@/assets/images/icon/apple.svg';
-import screen from '@/assets/images/assets/screen_11.png';
+import playstore from "@/assets/images/icon/playstore.svg";
+import apple from "@/assets/images/icon/apple.svg";
 
-// image style 
+// image style
 const imgStyle = {
-  height:'auto'
-}
+  height: "auto",
+};
 
 const FancyBannerFour = () => {
   return (
@@ -61,8 +60,8 @@ const FancyBannerFour = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <Image
-              src={screen}
+            <img
+              src="/assets/images/assets/screen_11.png"
               alt="screen"
               className="lazy-img"
               style={imgStyle}

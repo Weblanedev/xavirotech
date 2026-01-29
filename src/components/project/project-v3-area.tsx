@@ -17,11 +17,12 @@ const imgStyle = {
 
 const ProjectThreeArea = () => {
   const portfolio_items = portfolio_data.filter(
-    (p) => p.portfolio === "portfolio-v3-page"
+    (p) => p.portfolio === "portfolio-v3-page",
   );
-  const {currentItems,handlePageClick,pageCount} = usePagination<IPortfolio>(portfolio_items,4);
+  const { currentItems, handlePageClick, pageCount } =
+    usePagination<IPortfolio>(portfolio_items, 4);
   // images
-  const images = portfolio_items.map((p) => p.img.src);
+  const images = portfolio_items.map((p) => p.img);
   // photoIndex
   const [photoIndex, setPhotoIndex] = useState<number>(0);
   // image open state
@@ -43,7 +44,7 @@ const ProjectThreeArea = () => {
                   <div key={i} className="col-md-6">
                     <div className="portfolio-block-one mb-60 lg-mb-40">
                       <div className="img-holder round-border">
-                        <Image
+                        <img
                           src={item.img}
                           style={imgStyle}
                           alt="portfolio-img"
@@ -84,7 +85,10 @@ const ProjectThreeArea = () => {
             </div>
 
             <div className="pagination-one border-top border-bottom pt-15 pb-15 mt-40 lg-mt-10">
-              <Pagination handlePageClick={handlePageClick} pageCount={pageCount} />
+              <Pagination
+                handlePageClick={handlePageClick}
+                pageCount={pageCount}
+              />
             </div>
           </div>
         </div>

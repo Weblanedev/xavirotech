@@ -12,6 +12,9 @@ const NewsletterBanner = ({ style_2 = false }: { style_2?: boolean }) => {
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
+  const isEmailValid =
+    email.trim().length > 0 && EMAIL_REGEX.test(email.trim());
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
@@ -71,7 +74,11 @@ const NewsletterBanner = ({ style_2 = false }: { style_2?: boolean }) => {
                       className={error ? "is-invalid" : ""}
                       aria-invalid={!!error}
                     />
-                    <button type="submit" className="rounded-circle tran3s">
+                    <button
+                      type="submit"
+                      className="rounded-circle tran3s"
+                      disabled={!isEmailValid}
+                    >
                       <i className="bi bi-arrow-right"></i>
                     </button>
                   </div>

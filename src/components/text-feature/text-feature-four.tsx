@@ -76,7 +76,7 @@ const TextFeatureFour = () => {
                 num={1.3}
                 text="b+"
                 title="Cumulative trading volume"
-                prev_text="$"
+                prev_text="₦"
                 delay="1"
                 decimal={true}
               />
@@ -94,7 +94,7 @@ const TextFeatureFour = () => {
                 num={1.2}
                 text="%"
                 title="Low interest rate"
-                prev_text="$"
+                prev_text="₦"
                 delay="3"
                 decimal={true}
               />

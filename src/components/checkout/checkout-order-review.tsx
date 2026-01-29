@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import useCartInfo from "@/hooks/use-cart-info";
 import { getCartProducts } from "@/redux/features/cart";
+import { formatNaira } from "@/utils/currency";
 
 const CheckoutOrderReview = () => {
   const { cart_products } = useAppSelector((state) => state.cart);
@@ -12,10 +13,10 @@ const CheckoutOrderReview = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
-      dispatch(getCartProducts())
+      dispatch(getCartProducts());
     }
   }, [dispatch]);
-  
+
   return (
     <>
       {cart_products.length === 0 && (
@@ -32,7 +33,7 @@ const CheckoutOrderReview = () => {
                   <span>{item.title}</span>
                 </th>
                 <td>
-                  <span>${item.price}</span>
+                  <span>{formatNaira(item.price)}</span>
                 </td>
               </tr>
             ))}
@@ -41,7 +42,7 @@ const CheckoutOrderReview = () => {
                 <span>Subtotal</span>
               </th>
               <td>
-                <span>${total.toFixed(2)}</span>
+                <span>{formatNaira(total)}</span>
               </td>
             </tr>
             <tr>
@@ -49,7 +50,7 @@ const CheckoutOrderReview = () => {
                 <span>Shipping</span>
               </th>
               <td>
-                <span>${ship_cost.toFixed(2)}</span>
+                <span>{formatNaira(ship_cost)}</span>
               </td>
             </tr>
           </tbody>
@@ -59,7 +60,7 @@ const CheckoutOrderReview = () => {
                 <span>Total</span>
               </th>
               <td>
-                <span>${(total + ship_cost).toFixed(2)}</span>
+                <span>{formatNaira(total + ship_cost)}</span>
               </td>
             </tr>
           </tfoot>

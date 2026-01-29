@@ -1,13 +1,11 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import bg from "@/assets/images/media/img_26.jpg";
 
-// props type
 type IProps = {
   title: string;
   subtitle: string;
-  bg_img?: StaticImageData;
+  bg_img?: string;
   shape: StaticImageData;
   page: string;
   cls?: string;
@@ -17,7 +15,7 @@ type IProps = {
 const BreadcrumbOne = ({
   title,
   subtitle,
-  bg_img = bg,
+  bg_img = "/assets/images/media/img_26.jpg",
   page,
   cls = "",
   style_2 = false,
@@ -27,7 +25,7 @@ const BreadcrumbOne = ({
     <>
       <div
         className="inner-banner-one pt-225 lg-pt-200 md-pt-150 pb-100 md-pb-70 position-relative"
-        style={{ backgroundImage: `url(${bg_img.src})` }}
+        style={{ backgroundImage: `url(${bg_img})` }}
       >
         <div className="container position-relative">
           {!style_2 && (

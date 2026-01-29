@@ -2,9 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 // internal
-import hand from "@/assets/images/assets/hand.png";
-import screen from "@/assets/images/assets/screen_14.png";
-import shape_1 from "@/assets/images/shape/shape_15.png";
 import shape_2 from "@/assets/images/shape/shape_16.svg";
 
 // image style
@@ -59,21 +56,21 @@ const TextFeatureSix = () => {
             </div>
           </div>
           <div className="media-wrapper">
-            <Image
-              src={hand}
+            <img
+              src="/assets/images/assets/hand.png"
               alt="hand-img"
               className="lazy-img w-100"
               style={imgStyle}
             />
-            <Image
-              src={screen}
+            <img
+              src="/assets/images/assets/screen_14.png"
               alt="screen-img"
               className="lazy-img shapes screen_01"
               style={imgStyle}
             />
           </div>
-          <Image
-            src={shape_1}
+          <img
+            src="/assets/images/shape/shape_15.png"
             alt="shape"
             className="lazy-img shapes shape_01"
             style={imgStyle}

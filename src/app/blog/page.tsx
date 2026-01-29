@@ -4,7 +4,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
 import FooterThree from "@/layout/footer/footer-three";
-import blog_bg from "@/assets/images/media/img_32.jpg";
 import shape from "@/assets/images/shape/shape_34.svg";
 import BlogListArea from "@/components/blogs/blog-list-area";
 import FancyBannerThree from "@/components/fancy-banner/fancy-banner-three";
@@ -27,7 +26,7 @@ const BlogPage = () => {
             title="Explore our News"
             subtitle="Meet our experts, guiding you through financial intricacies with precision"
             page="Blog"
-            bg_img={blog_bg}
+            bg_img="/assets/images/media/img_32.jpg"
             style_2={true}
             shape={shape}
           />

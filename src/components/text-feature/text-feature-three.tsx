@@ -54,7 +54,7 @@ const TextFeatureThree = ({
                     <div className="col-xl-6 col-sm-7">
                       <div className="counter-block-one mt-20">
                         <div className="main-count fw-bold">
-                          $<span className="counter">1.3</span>b+
+                          ₦<span className="counter">2.02</span>tr+
                         </div>
                         <p className="m0">Cumulative trading volume</p>
                       </div>
@@ -116,7 +116,7 @@ const TextFeatureThree = ({
                     <div className="col-xl-6 col-sm-7">
                       <div className="counter-block-one mt-20">
                         <div className="main-count fw-bold">
-                          $<span className="counter">1.3</span>b+
+                          ₦<span className="counter">2.02</span>tr+
                         </div>
                         <p className="m0">Cumulative trading volume</p>
                       </div>

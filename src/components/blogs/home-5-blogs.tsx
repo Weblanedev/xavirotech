@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 // internal
 import { IBlog } from "@/types/blog-d-t";
 import blog_data from "@/data/blog-data";
@@ -11,7 +10,10 @@ function BlogItem({ blog }: { blog: IBlog }) {
     <article className="blog-meta-three pt-60 lg-pt-40 pb-70 lg-pb-40 h-100 wow fadeInUp">
       <div className="post-data h-100 w-100 d-inline-flex flex-column pe-xl-4">
         <div>
-          <Link href={`/blog-details/${blog.id}`} className="tag fw-500 text-uppercase">
+          <Link
+            href={`/blog-details/${blog.id}`}
+            className="tag fw-500 text-uppercase"
+          >
             {blog.category}
           </Link>
         </div>
@@ -23,8 +25,9 @@ function BlogItem({ blog }: { blog: IBlog }) {
           {blog.date}
         </div>
         <div className="d-flex justify-content-between align-items-center mt-auto">
-          <Image src={blog.img} alt="logo" className="lazy-img" />
-          <Link href={`/blog-details/${blog.id}`}
+          <img src={blog.img} alt="logo" className="lazy-img" />
+          <Link
+            href={`/blog-details/${blog.id}`}
             className="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"
           >
             <i className="bi bi-arrow-up-right"></i>

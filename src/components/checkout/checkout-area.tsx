@@ -73,6 +73,7 @@ const schema = yup.object().shape({
     .label("CVV"),
   agreement: yup
     .boolean()
+    .required("You must agree to the terms and conditions")
     .oneOf([true], "You must agree to the terms and conditions")
     .label("Agreement"),
 });
@@ -94,9 +95,10 @@ const CheckoutArea = () => {
     reset,
     setValue,
     watch,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
+    mode: "onChange",
     defaultValues: {
       agreement: false,
       expiryMonth: "",
@@ -397,7 +399,11 @@ const CheckoutArea = () => {
                     </label>
                     <ErrorMsg msg={errors.agreement?.message} />
                   </div>
-                  <button type="submit" className="btn-ten tran3s w-100">
+                  <button
+                    type="submit"
+                    className="btn-ten tran3s w-100"
+                    disabled={!isValid}
+                  >
                     Place Order
                   </button>
                 </div>

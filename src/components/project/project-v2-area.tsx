@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,10 +15,10 @@ const imgStyle = {
 
 const ProjectTwoArea = () => {
   const portfolio_items = portfolio_data.filter(
-    (p) => p.portfolio === "portfolio-v2-page"
+    (p) => p.portfolio === "portfolio-v2-page",
   );
   // images
-  const images = portfolio_items.map((p) => p.img.src);
+  const images = portfolio_items.map((p) => p.img);
   // photoIndex
   const [photoIndex, setPhotoIndex] = useState<number>(0);
   // image open state
@@ -43,7 +43,7 @@ const ProjectTwoArea = () => {
                     <div key={i} className="portfolio-item">
                       <div className="portfolio-block-one mb-60 lg-mb-40">
                         <div className="img-holder round-border">
-                          <Image
+                          <img
                             src={item.img}
                             style={imgStyle}
                             alt="portfolio-img"

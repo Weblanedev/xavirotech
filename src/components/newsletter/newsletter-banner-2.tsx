@@ -66,7 +66,11 @@ const NewsletterBannerTwo = () => {
                     className={error ? "is-invalid" : ""}
                     aria-invalid={!!error}
                   />
-                  <button type="submit" className="rounded-circle tran3s">
+                  <button
+                    type="submit"
+                    className="rounded-circle tran3s"
+                    disabled={!isEmailValid}
+                  >
                     <i className="bi bi-arrow-right"></i>
                   </button>
                 </div>

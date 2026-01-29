@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 // internal
 import screen_1 from "@/assets/images/assets/screen_22.svg";
-import screen_2 from "@/assets/images/assets/screen_23.png";
 import shape_1 from "@/assets/images/shape/shape_43.svg";
 import shape_2 from "@/assets/images/shape/shape_42.svg";
 import PartnersSliderOne from "../partners/partners-slider-one";
@@ -48,8 +47,8 @@ const HeroBannerSix = () => {
                 className="lazy-img shapes screen_01"
                 style={imgStyle}
               />
-              <Image
-                src={screen_2}
+              <img
+                src="/assets/images/assets/screen_23.png"
                 alt="screen"
                 className="lazy-img shapes screen_02"
                 style={imgStyle}

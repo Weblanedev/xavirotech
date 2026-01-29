@@ -11,7 +11,7 @@ const FancyBannerSix = () => {
               Apply for loan with low interest.
             </h2>
             <p className="text-white text-xl pt-10 pb-20">
-              Apply for loan & get up to $20million with low interest
+              Apply for loan & get up to ₦31 billion with low interest
             </p>
             <Link
               href="/shop"

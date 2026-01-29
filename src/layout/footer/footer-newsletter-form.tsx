@@ -8,6 +8,9 @@ const FooterNewsletterForm = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
+  const isEmailValid =
+    email.trim().length > 0 && EMAIL_REGEX.test(email.trim());
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
@@ -45,7 +48,7 @@ const FooterNewsletterForm = () => {
         className={error ? "is-invalid" : ""}
         aria-invalid={!!error}
       />
-      <button type="submit">
+      <button type="submit" disabled={!isEmailValid}>
         <i className="bi bi-arrow-right"></i>
       </button>
       {error && <p className="text-danger small m0 pt-2">{error}</p>}

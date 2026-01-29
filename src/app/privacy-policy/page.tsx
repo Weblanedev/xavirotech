@@ -4,7 +4,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import FooterThree from "@/layout/footer/footer-three";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
-import shop_bg from "@/assets/images/media/img_47.jpg";
 import shape from "@/assets/images/shape/shape_26.svg";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function PrivacyPolicyPage() {
             title="Privacy Policy"
             subtitle="How we collect, use, and protect your information"
             page="Privacy Policy"
-            bg_img={shop_bg}
+            bg_img="/assets/images/media/img_47.jpg"
             shape={shape}
           />
 

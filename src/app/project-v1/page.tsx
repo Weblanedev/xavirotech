@@ -4,7 +4,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
 import FooterThree from "@/layout/footer/footer-three";
-import project_bg from "@/assets/images/media/img_32.jpg";
 import FancyBannerThree from "@/components/fancy-banner/fancy-banner-three";
 import shape from "@/assets/images/shape/shape_28.svg";
 import ProjectOneArea from "@/components/project/project-v1-area";
@@ -27,7 +26,7 @@ const ProjectOnePage = () => {
             title="Our Most Recent Projects"
             subtitle="Meet our products, guiding you through financial intricacies with precision"
             page="Project"
-            bg_img={project_bg}
+            bg_img="/assets/images/media/img_32.jpg"
             shape={shape}
           />
           {/* breadcrumb end */}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 // internal
 import icon from "@/assets/images/assets/ils_04.svg";
+import { formatNaira } from "@/utils/currency";
 
 // pricing card item
 type IProps = {
@@ -25,12 +26,10 @@ function PricingCardItem({ title, month, price, membership, lists }: IProps) {
         </div>
       </div>
       <div className="price-banner text-lg-start d-lg-flex justify-content-center align-items-center">
-        <div className="price">
-          <sup>$</sup> {price}
-        </div>
+        <div className="price">{formatNaira(Number(price))}</div>
         <div className="ps-lg-4">
           <strong className="text-lg fw-500">{membership} membership</strong>
-          <span>Starting at $53/mo</span>
+          <span>Starting at {formatNaira(53)}/mo</span>
         </div>
       </div>
 

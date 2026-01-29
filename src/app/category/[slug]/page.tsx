@@ -4,7 +4,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import FooterThree from "@/layout/footer/footer-three";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
-import shop_bg from "@/assets/images/media/img_47.jpg";
 import shape from "@/assets/images/shape/shape_26.svg";
 import {
   getDummyProductsByCategory,
@@ -20,9 +19,10 @@ export const metadata: Metadata = {
 export default async function CategoryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const slug = decodeURIComponent(params.slug);
+  const { slug: slugParam } = await params;
+  const slug = decodeURIComponent(slugParam);
   const res = await getDummyProductsByCategory(slug, {
     limit: 100,
     skip: 0,
@@ -40,7 +40,7 @@ export default async function CategoryPage({
             title={`Category: ${slug}`}
             subtitle="Browse products in this category"
             page="Category"
-            bg_img={shop_bg}
+            bg_img="/assets/images/media/img_47.jpg"
             shape={shape}
           />
 

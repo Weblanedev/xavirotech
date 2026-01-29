@@ -1,8 +1,6 @@
-import { StaticImageData } from "next/image";
-
 export interface IBlog {
   id: number;
-  img: StaticImageData;
+  img: string;
   date: string;
   title: string;
   post_info?: string;

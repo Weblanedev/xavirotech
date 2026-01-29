@@ -19,7 +19,7 @@ const PortfolioOne = () => {
     (p) => p.portfolio === "portfolio-one",
   );
   // images
-  const images = portfolio_items.map((p) => p.img.src);
+  const images = portfolio_items.map((p) => p.img);
   // photoIndex
   const [photoIndex, setPhotoIndex] = useState<number>(0);
   // image open state
@@ -59,7 +59,7 @@ const PortfolioOne = () => {
                     <div key={item.id} className="portfolio-item">
                       <div className="portfolio-block-one mb-60 lg-mb-40">
                         <div className="img-holder round-border">
-                          <Image
+                          <img
                             src={item.img}
                             style={imgStyle}
                             alt="portfolio-img"

@@ -4,9 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 // internal
 import BlogSidebar from "../blog-sidebar";
-import blog_1 from "@/assets/images/blog/blog_img_08.jpg";
-import blog_2 from "@/assets/images/blog/blog_img_16.jpg";
-import blog_3 from "@/assets/images/blog/blog_img_17.jpg";
 import icon from "@/assets/images/icon/icon_93.svg";
 import BlogDetailsForm from "@/components/forms/blog-details-form";
 import { IBlog } from "@/types/blog-d-t";
@@ -21,7 +18,9 @@ const BlogDetailsArea = ({ blog }: { blog: IBlog }) => {
             <article className="blog-meta-two style-two">
               <figure
                 className="post-img position-relative d-flex align-items-end m0"
-                style={{ backgroundImage: `url(${blog_1.src})` }}
+                style={{
+                  backgroundImage: "url(/assets/images/blog/blog_img_08.jpg)",
+                }}
               >
                 <div className="date">{date}</div>
               </figure>
@@ -65,15 +64,15 @@ const BlogDetailsArea = ({ blog }: { blog: IBlog }) => {
                   </div>
                   <div className="row img-gallery">
                     <div className="col-sm-8">
-                      <Image
-                        src={blog_2}
+                      <img
+                        src="/assets/images/blog/blog_img_16.jpg"
                         alt="blog-img"
                         className="lazy-img w-100"
                       />
                     </div>
                     <div className="col-sm-4">
-                      <Image
-                        src={blog_3}
+                      <img
+                        src="/assets/images/blog/blog_img_17.jpg"
                         alt="blog-img"
                         className="lazy-img w-100"
                       />

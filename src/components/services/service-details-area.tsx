@@ -2,7 +2,6 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 // internal
-import service_img from "@/assets/images/media/img_35.jpg";
 import icon_1 from "@/assets/images/icon/icon_72.svg";
 import icon_2 from "@/assets/images/icon/icon_73.svg";
 import icon_3 from "@/assets/images/icon/icon_74.svg";
@@ -87,8 +86,8 @@ const ServiceDetailsArea = () => {
                 landscape.
               </p>
               <div className="img-meta mb-60 lg-mb-40">
-                <Image
-                  src={service_img}
+                <img
+                  src="/assets/images/media/img_35.jpg"
                   alt="service_img"
                   className="lazy-img w-100 rounded-4"
                   style={imgStyle}

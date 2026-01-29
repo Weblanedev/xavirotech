@@ -2,9 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 // internal
-import slider_1 from "@/assets/images/media/img_37.jpg";
-import slider_2 from "@/assets/images/media/img_01.jpg";
-import slider_3 from "@/assets/images/media/img_02.jpg";
 import icon_1 from "@/assets/images/icon/icon_85.svg";
 import icon_2 from "@/assets/images/icon/icon_88.svg";
 import icon_3 from "@/assets/images/icon/icon_89.svg";
@@ -26,15 +23,21 @@ const ProjectDetailsTwoArea = () => {
                   <div className="carousel-inner h-100">
                     <div
                       className="carousel-item h-100 active"
-                      style={{ backgroundImage: `url(${slider_1.src})` }}
+                      style={{
+                        backgroundImage: "url(/assets/images/media/img_37.jpg)",
+                      }}
                     ></div>
                     <div
                       className="carousel-item h-100"
-                      style={{ backgroundImage: `url(${slider_2.src})` }}
+                      style={{
+                        backgroundImage: "url(/assets/images/media/img_01.jpg)",
+                      }}
                     ></div>
                     <div
                       className="carousel-item h-100"
-                      style={{ backgroundImage: `url(${slider_3.src})` }}
+                      style={{
+                        backgroundImage: "url(/assets/images/media/img_02.jpg)",
+                      }}
                     ></div>
                   </div>
                   <button
@@ -67,7 +70,12 @@ const ProjectDetailsTwoArea = () => {
                 <ul className="style-none list-meta">
                   <li className="d-flex align-items-center">
                     <div className="icon">
-                      <Image src={icon_1} alt="" className="lazy-img" style={imgStyle} />
+                      <Image
+                        src={icon_1}
+                        alt=""
+                        className="lazy-img"
+                        style={imgStyle}
+                      />
                     </div>
                     <div className="ps-4">
                       <div className="text1">Date</div>

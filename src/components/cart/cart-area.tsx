@@ -5,6 +5,7 @@ import Link from "next/link";
 import useCartInfo from "@/hooks/use-cart-info";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { clearCart, getCartProducts } from "@/redux/features/cart";
+import { formatNaira } from "@/utils/currency";
 import CartItem from "./cart-item";
 
 const CartArea = () => {
@@ -15,12 +16,12 @@ const CartArea = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
-      dispatch(getCartProducts())
+      dispatch(getCartProducts());
     }
   }, [dispatch]);
-  
+
   let content =
-   cart_products.length === 0 ? (
+    cart_products.length === 0 ? (
       <div className="text-center pt-50">
         <h3>No Cart Items Found</h3>
         <Link href="/shop" className="btn-ten tran3s update-cart-button mt-20">
@@ -71,15 +72,15 @@ const CartArea = () => {
               <tbody>
                 <tr>
                   <th>Subtotal</th>
-                  <td>${total.toFixed(2)}</td>
+                  <td>{formatNaira(total)}</td>
                 </tr>
                 <tr>
                   <th>Shipping Cost</th>
-                  <td>${ship_cost.toFixed(2)}</td>
+                  <td>{formatNaira(ship_cost)}</td>
                 </tr>
                 <tr>
                   <th>Total</th>
-                  <td>${(total + ship_cost).toFixed(2)}</td>
+                  <td>{formatNaira(total + ship_cost)}</td>
                 </tr>
               </tbody>
             </table>

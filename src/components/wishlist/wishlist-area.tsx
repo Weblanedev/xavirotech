@@ -4,9 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 // internal
 import { IProduct } from "@/types/product-d-t";
+import { formatNaira } from "@/utils/currency";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { add_cart_product } from "@/redux/features/cart";
-import { getWishlistProducts, remove_wishlist_product } from "@/redux/features/wishlist";
+import {
+  getWishlistProducts,
+  remove_wishlist_product,
+} from "@/redux/features/wishlist";
 
 const WishlistArea = () => {
   const { wishlist } = useAppSelector((state) => state.wishlist);
@@ -18,7 +22,7 @@ const WishlistArea = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
-      dispatch(getWishlistProducts())
+      dispatch(getWishlistProducts());
     }
   }, [dispatch]);
   return (
@@ -66,15 +70,21 @@ const WishlistArea = () => {
                         </ul>
                       </td>
                       <td className="price">
-                        <span>${item.price}</span>
+                        <span>{formatNaira(item.price)}</span>
                       </td>
                       <td className="cart-btn">
-                        <button onClick={() => dispatch(add_cart_product(item))} className="btn-ten tran3s">
+                        <button
+                          onClick={() => dispatch(add_cart_product(item))}
+                          className="btn-ten tran3s"
+                        >
                           Add To cart
                         </button>
                       </td>
                       <td>
-                        <a onClick={() => handleRemove(item)} className="remove-product cursor-pointer">
+                        <a
+                          onClick={() => handleRemove(item)}
+                          className="remove-product cursor-pointer"
+                        >
                           x
                         </a>
                       </td>

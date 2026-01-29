@@ -4,7 +4,6 @@ import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/header/header-two";
 import BreadcrumbOne from "@/components/breadcrumb/breadcrumb-one";
 import FooterThree from "@/layout/footer/footer-three";
-import service_bg from "@/assets/images/media/img_32.jpg";
 import FancyBannerThree from "@/components/fancy-banner/fancy-banner-three";
 import shape from "@/assets/images/shape/shape_26.svg";
 import ServiceOneArea from "@/components/services/service-v1-area";
@@ -28,7 +27,7 @@ const ServicePage = () => {
             subtitle="Offering solutions & services to address a spectrum of financial issues"
             page="Services"
             shape={shape}
-            bg_img={service_bg}
+            bg_img="/assets/images/media/img_32.jpg"
             style_2={true}
             cls="me-xxl-4 me-lg-5"
           />
@@ -43,7 +42,7 @@ const ServicePage = () => {
           {/* fancy banner three end */}
 
           {/* news letter start */}
-          <NewsletterBanner/>
+          <NewsletterBanner />
           {/* news letter end */}
         </main>
 

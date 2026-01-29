@@ -68,7 +68,7 @@ const FooterFour = () => {
               <h5 className="footer-title">Company</h5>
               <ul className="footer-nav-link style-none">
                 <li>
-                  <Link href="/about-us-2">About us</Link>
+                  <Link href="/about-us">About us</Link>
                 </li>
                 <li>
                   <Link href="/blog-grid">Blogs</Link>

@@ -1,8 +1,6 @@
-import { StaticImageData } from "next/image";
-
 export interface ITeam {
   id: number;
-  img: StaticImageData;
+  img: string;
   name: string;
   designation: string;
   page: string;

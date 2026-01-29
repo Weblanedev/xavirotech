@@ -59,7 +59,7 @@ const FooterThree = ({ style_2 }: { style_2?: boolean }) => {
               <h5 className="footer-title">Company</h5>
               <ul className="footer-nav-link style-none">
                 <li>
-                  <Link href="/">About us</Link>
+                  <Link href="/about-us">About us</Link>
                 </li>
                 {/* <li>
                   <Link href="/shop">Shop</Link>

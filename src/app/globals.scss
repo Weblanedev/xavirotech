@@ -7,3 +7,22 @@
 @import "../../public/assets/fonts/bootstrap-icons/font.css";
 @import "../../public/assets/fonts/bootstrap-icons/font.css";
 @import "../../public/assets/scss/style.scss";
+
+// Buttons and clickable controls: pointer cursor on hover
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+[role="button"],
+.btn,
+[class^="btn-"],
+a.btn,
+a[class^="btn-"] {
+  cursor: pointer;
+}
+button:disabled,
+input:disabled[type="submit"],
+input:disabled[type="button"],
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}

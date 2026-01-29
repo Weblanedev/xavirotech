@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import shape_1 from "@/assets/images/shape/shape_51.svg";
-import business_man from "@/assets/images/assets/businessman_03.png";
-import shape_2 from "@/assets/images/shape/shape_52.png";
 
 const FancyBannerEight = () => {
   return (
@@ -29,14 +27,14 @@ const FancyBannerEight = () => {
             </div>
             <div className="col-md-5 text-center text-md-end">
               <div className="media-wrapper position-relative z-1 d-inline-block">
-                <Image
-                  src={business_man}
+                <img
+                  src="/assets/images/assets/businessman_03.png"
                   alt=""
                   className="lazy-img"
                   style={{ height: "auto" }}
                 />
-                <Image
-                  src={shape_2}
+                <img
+                  src="/assets/images/shape/shape_52.png"
                   alt=""
                   className="lazy-img shapes shape_01"
                 />

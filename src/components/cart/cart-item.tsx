@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 // internal
 import { IProduct } from "@/types/product-d-t";
+import { formatNaira } from "@/utils/currency";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import {
   add_cart_product,
@@ -77,7 +78,9 @@ const CartItem = () => {
             </ul>
           </td>
           <td className="price total-price">
-            <span>${item.price * (item.orderQuantity as number)}</span>
+            <span>
+              {formatNaira(item.price * (item.orderQuantity as number))}
+            </span>
           </td>
           <td>
             <a
