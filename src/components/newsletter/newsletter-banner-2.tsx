@@ -12,7 +12,8 @@ const NewsletterBannerTwo = () => {
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
-  const isEmailValid = email.trim().length > 0 && EMAIL_REGEX.test(email.trim());
+  const isEmailValid =
+    email.trim().length > 0 && EMAIL_REGEX.test(email.trim());
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
